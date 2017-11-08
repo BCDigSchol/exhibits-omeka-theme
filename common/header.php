@@ -42,68 +42,37 @@
 </head>
 <?php echo body_tag(['id' => @$bodyid, 'class' => @$bodyclass]); ?>
 <?php fire_plugin_hook('public_body', ['view' => $this]); ?>
-<div id="bclib-header" class="hide-search">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4 col-sm-12 col-xs-6 col-xxs">
-                <a href="https://library.bc.edu" title="Go to Boston College Libraries" class="bclib-header-logo">
-                    <img src="https://library.bc.edu/theme/img/title_295x30_transparent_whitetext.png" id="fakebctitle" alt="Boston College Library Logo">
-                    <p>Boston College Libraries</p>
-                </a>
-            </div>
-            <div class="col-md-8 col-sm-12 col-xs-6 col-xxs header-right">
-                <div class="col-md-7 col-sm-7 col-xs-7 col-xxs link-wrapper">
-                    <ul class="bclib-header-links">
-                        <li><a href="https://bc.edu">BC Home</a></li>
-                        <li><a href="https://www.bc.edu/bc-web/about/mission.html">Mission</a></li>
-                        <li>
-                            <a href="https://libguides.bc.edu/feedback"><span class="fa fa-commenting-o" aria-hidden="true"></span>
-                                Feedback</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-5 col-sm-5 col-xs-5 col-xxs input-wrapper">
-                    <div class="pull-right">
-                        <form action="https://www.bc.edu/bc-web/search.html">
-                            <div class="input-group" id="bclib-header-form">
-                                <label for="bclib-header-search" class="accessibility-text">Search the Library</label>
-                                <input type="hidden" ie="UTF-8"/>
-                                <input type="text" id="bclib-header-search" class="form-control" name="q" placeholder="Search bc.edu">
-                                <span class="input-group-btn"><button class="btn btn-default"><i class="fa fa-search" aria-hidden="true"></i><span class="accessibility-text">Submit Search</span></button></span>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?php include __DIR__ . '/bclib_header.html'; ?>
 <header role="banner">
     <div class="container">
-        <?php fire_plugin_hook('public_header', ['view' => $this]); ?>
-        <h1 class="site-title text-center"><?php echo link_to_home_page(theme_logo()); ?></h1>
-        <h5 class="text-center"><?php echo __('A Sample Omeka Theme'); ?></h5>
+        <div class="row">
+            <?php fire_plugin_hook('public_header', ['view' => $this]); ?>
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                            <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
+                        </a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav navbar-right">
+                            <?php echo public_nav_main_bootstrap(); ?>
+                        </ul>
+                    </div><!-- /.navbar-collapse -->
+                </div><!-- /.container-fluid -->
+            </nav>
+        </div>
+
     </div>
 
-    <nav class="navbar navbar-default" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#primary-navigation">
-                    <span class="sr-only">Menu</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-            </div>
-
-            <div class="collapse navbar-collapse" id="primary-navigation">
-                <?php echo public_nav_main_bootstrap(); ?>
-
-                <form class="navbar-form navbar-right" role="search" action="<?php echo public_url(''); ?>search">
-                    <?php echo search_form(['show_advanced' => false]); ?>
-                </form>
-            </div>
-        </div>
-    </nav>
 </header>
 <main id="content" role="main">
     <div class="container">

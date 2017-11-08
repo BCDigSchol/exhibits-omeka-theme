@@ -2,3 +2,51 @@
 @import "bootstrap";
 @import "bc-modular-header";
 
+.navbar {
+  border: 0;
+}
+
+header {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4)
+}
+
+.navbar {
+  margin-bottom: 8px;
+
+  h1 {
+    font-size: 24px;
+  }
+
+  ul.navbar-right {
+    margin-top: 21px;
+  }
+
+  .nav-pills {
+    > li {
+      text-transform: uppercase;
+      margin-right: 16px;
+      float: none;
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: baseline;
+
+      & > a {
+        padding: 0;
+      }
+    }
+
+    & > li.active {
+      border-top: 2px solid blue;
+    }
+
+    & > li.active > a, & > li.active > a:hover, .nav-pills > li.active > a:focus {
+      color: $text-color;
+      background-color: #fff;
+    }
+  }
+}
+
+@media only screen and (min-width: 40.0625em) {
+  .nav-pills li {
+  }
+}

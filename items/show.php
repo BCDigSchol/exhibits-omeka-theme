@@ -1,8 +1,8 @@
 <?php 
-    echo head(array('title' => metadata('item', array('Dublin Core', 'Title')), 'bodyclass' => 'items show'));
+    echo head(['title' => metadata('item', ['Dublin Core', 'Title']), 'bodyclass' => 'items show']);
 ?>
 
-    <h1><?php echo metadata('item', array('Dublin Core', 'Title')); ?></h1>
+    <h1><?php echo metadata('item', ['Dublin Core', 'Title']); ?></h1>
 
     <div class="row">
         <div class="col-sm-6">
@@ -49,7 +49,7 @@
             <!-- The following prints a citation for this item. -->
             <div id="item-citation" class="element">
                 <h3><?php echo __('Citation'); ?></h3>
-                <div class="element-text"><?php echo metadata('item', 'citation', array('no_escape' => true)); ?></div>
+                <div class="element-text"><?php echo metadata('item', 'citation', ['no_escape' => true]); ?></div>
             </div>
             
             <div id="item-output-formats" class="element">
@@ -59,7 +59,7 @@
         </div>
     </div>
     
-    <?php fire_plugin_hook('public_items_show', array('view' => $this, 'item' => $item)); ?>
+    <?php fire_plugin_hook('public_items_show', ['view' => $this, 'item' => $item]); ?>
     <ul class="pager">
         <li class="previous"><?php echo link_to_previous_item_show(); ?></li>
         <li class="next"><?php echo link_to_next_item_show(); ?></li>

@@ -1,6 +1,6 @@
 <?php
     $pageTitle = __('Browse Items');
-    echo head(array('title'=>$pageTitle,'bodyclass' => 'items browse'));
+    echo head(['title' =>$pageTitle, 'bodyclass' => 'items browse']);
 ?>
 
     <h1><?php echo 'Browse all items'; ?></h1>
@@ -16,10 +16,10 @@
             <div class="browse-items-header hidden-xs">
                 <div class="row">
                     <div class="col-sm-3 col-sm-offset-2 col-md-2 col-md-offset-2">
-                        <?php echo browse_sort_links(array('Title'=>'Dublin Core,Title'), array('')); ?>
+                        <?php echo browse_sort_links(['Title' =>'Dublin Core,Title'], ['']); ?>
                     </div>
                     <div class="col-sm-3 col-md-2">
-                        <?php echo browse_sort_links(array('Creator'=>'Dublin Core,Creator'), array('')); ?>
+                        <?php echo browse_sort_links(['Creator' =>'Dublin Core,Creator'], ['']); ?>
                     </div>
                     <div class="hidden-sm col-md-2">
                         Subject
@@ -43,19 +43,20 @@
                         ?>
                     </div>
                     <div class="col-sm-3 col-md-2">
-                        <?php echo link_to_item(metadata('item', array('Dublin Core', 'Title')), array('class'=>'permalink')); ?>
+                        <?php echo link_to_item(metadata('item', ['Dublin Core', 'Title']), ['class' =>'permalink']
+                        ); ?>
                     </div>
                     <div class="col-sm-3 col-md-2">
-                        <?php echo metadata('item', array('Dublin Core', 'Creator')); ?>
+                        <?php echo metadata('item', ['Dublin Core', 'Creator']); ?>
                     </div>
                     <div class="hidden-sm col-md-2">
-                        <?php echo metadata('item', array('Dublin Core', 'Subject')); ?>
+                        <?php echo metadata('item', ['Dublin Core', 'Subject']); ?>
                     </div>
                     <div class="col-sm-4 col-md-4">
-                        <?php echo metadata('item', array('Dublin Core', 'Description'), array('snippet'=>150)); ?>
+                        <?php echo metadata('item', ['Dublin Core', 'Description'], ['snippet' =>150]); ?>
                     </div>
                 
-                    <?php fire_plugin_hook('public_items_browse_each', array('view' => $this, 'item' =>$item)); ?>
+                    <?php fire_plugin_hook('public_items_browse_each', ['view' => $this, 'item' =>$item]); ?>
                 </div>
             </div>
             <?php endforeach; ?>
@@ -69,5 +70,5 @@
     </div>
     <?php echo pagination_links(); ?>
 
-<?php fire_plugin_hook('public_items_browse', array('items'=>$items, 'view' => $this)); ?>
+<?php fire_plugin_hook('public_items_browse', ['items' =>$items, 'view' => $this]); ?>
 <?php echo foot(); ?>

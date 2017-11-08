@@ -3,14 +3,14 @@
     <?php if (isset($this->previous)): ?>
         <li>
             <?php $getParams['page'] = $previous; ?>
-            <a rel="prev" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>">&laquo;</a>
+            <a rel="prev" href="<?php echo html_escape($this->url([], null, $getParams)); ?>">&laquo;</a>
         </li>
     <?php endif; ?>
 
     <li class="page-input">
         <form action="<?php echo html_escape($this->url()); ?>" method="get" accept-charset="utf-8">
         <?php
-            $hiddenParams = array();
+            $hiddenParams = [];
             $entries = explode('&', http_build_query($getParams));
             foreach ($entries as $entry) {
                 if(!$entry) {
@@ -39,7 +39,7 @@
     <?php if (isset($this->next)): ?>
         <li>
             <?php $getParams['page'] = $next; ?>
-            <a rel="next" href="<?php echo html_escape($this->url(array(), null, $getParams)); ?>">&raquo;</a>
+            <a rel="next" href="<?php echo html_escape($this->url([], null, $getParams)); ?>">&raquo;</a>
         </li>
     <?php endif; ?>
 </ul>

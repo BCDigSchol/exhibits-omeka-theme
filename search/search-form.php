@@ -1,6 +1,7 @@
 <?php echo $this->form('search-form', $options['form_attributes']); ?>
     <div class="form-group">
-        <?php echo $this->formText('query', $filters['query'], array('class'=>'form-control', 'placeholder'=>'Search the collection')); ?>
+        <?php echo $this->formText('query', $filters['query'], ['class' =>'form-control', 'placeholder' =>'Search the collection']
+        ); ?>
         <button type="submit" class="btn btn-default">Search</button>
     </div>
     <?php if ($options['show_advanced']): ?>
@@ -13,7 +14,7 @@
             <fieldset id="record-types">
                 <p><?php echo __('Search only these record types:'); ?></p>
                 <?php foreach ($record_types as $key => $value): ?>
-                    <?php echo $this->formCheckbox('record_types[]', $key, in_array($key, $filters['record_types']) ? array('checked' => true, 'id' => 'record_types-' . $key) : null); ?> <?php echo $value; ?><br>
+                    <?php echo $this->formCheckbox('record_types[]', $key, in_array($key, $filters['record_types']) ? ['checked' => true, 'id' => 'record_types-' . $key] : null); ?> <?php echo $value; ?><br>
                 <?php endforeach; ?>
             </fieldset>
             <?php elseif (is_admin_theme()): ?>

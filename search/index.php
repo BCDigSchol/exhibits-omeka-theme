@@ -1,6 +1,6 @@
 <?php
     $pageTitle = __('Search Omeka ') . __('(%s total)', $total_results);
-    echo head(array('title' => $pageTitle, 'bodyclass' => 'search'));
+    echo head(['title' => $pageTitle, 'bodyclass' => 'search']);
     $searchRecordTypes = get_search_record_types();
 ?>
     <h1><?php echo $pageTitle; ?></h1>
@@ -25,7 +25,7 @@
                     </td>
                     <td>
                         <?php if ($recordImage = record_image($recordType, 'square_thumbnail')): ?>
-                            <?php echo link_to($record, 'show', $recordImage, array('class' => 'image')); ?>
+                            <?php echo link_to($record, 'show', $recordImage, ['class' => 'image']); ?>
                         <?php endif; ?>
                         <a href="<?php echo record_url($record, 'show'); ?>"><?php echo $searchText['title'] ? $searchText['title'] : '[Unknown]'; ?></a>
                     </td>

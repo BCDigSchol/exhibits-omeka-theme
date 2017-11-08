@@ -8,7 +8,7 @@
                 <?php echo __('Proudly powered by <a href="http://omeka.org">Omeka</a>.'); ?>
             </p>
         </div>
-        <?php fire_plugin_hook('public_footer', array('view' => $this)); ?>
+        <?php fire_plugin_hook('public_footer', ['view' => $this]); ?>
     </footer>
 </body>
 </html>

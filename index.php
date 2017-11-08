@@ -1,4 +1,4 @@
-<?php echo head(array('bodyid'=>'home')); ?>
+<?php echo head(['bodyid' =>'home']); ?>
 
 <?php echo get_theme_option('Homepage About'); ?>
 <div class="row">
@@ -27,7 +27,7 @@
         <p class="view-items-link"><a href="<?php echo html_escape(url('items')); ?>"><?php echo __('View All Items'); ?></a></p>
     </div>
     
-    <?php fire_plugin_hook('public_home', array('view' => $this)); ?>
+    <?php fire_plugin_hook('public_home', ['view' => $this]); ?>
 </div>
 
 <?php echo foot(); ?>

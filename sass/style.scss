@@ -8,8 +8,37 @@
 @grid-gutter-width:         300px;
 
 
+h1 {
+  font-size: 31px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
 .navbar {
   border: 0;
+}
+
+.navbar-left {
+  font-size: 13px;
+
+  &> li {
+    display: inline-block;
+
+    &> a {
+      padding: 0 5px;
+      margin-top: 15px;
+
+      &:hover, &:focus {
+        background-color: transparent;
+      }
+    }
+
+    &.active a {
+      border-top: 2px solid brown
+    }
+  }
 }
 
 header {
@@ -56,23 +85,51 @@ header {
 }
 
 .noteworthy-exhibits {
+  margin-top: 5em;
   clear: both
 }
 
-.featured-exhibits {
-  &:first-child {
-    padding-left: 0;
-  }
+$featured_exhibit_height: 225px;
+$featured_exhibit_tail: 20px;
+$featured_exhibit_bottom_margin: 20px;
 
-  &:last-child {
-    padding-right: 0;
+$brief_result_left_border: $bc_bright_orange;
+
+.featured-exhibits {
+
+  .exhibit-list {
+    background-color: $bc_light_grey;
+    height: ($featured_exhibit_height + $featured_exhibit_bottom_margin) * 2;
+    margin-bottom: $featured_exhibit_bottom_margin;
+    border-left: 10px solid $brief_result_left_border;
+
+    .exhibit {
+      height: $featured_exhibit_height;
+    }
+  }
+}
+
+.full-exhibit-list {
+  background-color: $bc_light_grey;
+  border-left: 10px solid $brief_result_left_border;
+
+  .exhibit {
   }
 }
 
 .exhibit {
   background-color: #fff;
   padding: 1em;
-  margin-bottom: 1em;
+  margin-bottom: $featured_exhibit_bottom_margin;
+  clear: both;
+  overflow: hidden;
+  position: relative;
+
+  a.image {
+    img {
+      max-width: 100%;
+    }
+  }
 }
 
 .sub-header {
@@ -80,4 +137,31 @@ header {
   color: #fff;
   text-align: center;
   text-transform: uppercase;
+}
+
+.exhibit h3 > a:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: #f7f6f8;
+  z-index: 50;
+}
+
+.exhibit h3 > a:after {
+  border: inset 16px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent transparent transparent #E5E2D7;
+  border-left-style: solid;
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  margin-top: -16px;
+  z-index: 51;
 }

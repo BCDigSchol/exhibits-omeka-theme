@@ -37,15 +37,20 @@ function exhibit_brief_result($exhibit)
     $link = link_to_exhibit(null, [], null, $exhibit);
 
     $img = linked_exhibit_thumb($exhibit);
-    $description = substr(strip_tags($exhibit->description), 0, 200);
+    $description = truncated_description($exhibit);
 
     return <<<EXHIBIT
         <div class="sub-section exhibit">
             <h3 class="sub-section-title">$link</h3>
-            $img
-            <div class="description small-12 medium-8 large-8 columns">$description</div>
+            <div class="col-md-4">$img</div>
+            <div class="description col-md-8 columns">{$description}…</div>
         </div>
 EXHIBIT;
+}
+
+function truncated_description($exhibit, $length = 200)
+{
+    return substr(strip_tags($exhibit->description), 0, $length);
 }
 
 function img_from_description($description)

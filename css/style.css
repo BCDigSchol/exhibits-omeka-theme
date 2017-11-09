@@ -5970,8 +5970,26 @@ button.close {
   #bclib-header .input-wrapper {
     padding-right: 0; } }
 @grid-gutter-width :         300px;
+h1 {
+  font-size: 31px; }
+
+h2 {
+  font-size: 30px; }
+
 .navbar {
   border: 0; }
+
+.navbar-left {
+  font-size: 13px; }
+  .navbar-left > li {
+    display: inline-block; }
+    .navbar-left > li > a {
+      padding: 0 5px;
+      margin-top: 15px; }
+      .navbar-left > li > a:hover, .navbar-left > li > a:focus {
+        background-color: transparent; }
+    .navbar-left > li.active a {
+      border-top: 2px solid brown; }
 
 header {
   box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
@@ -6001,22 +6019,60 @@ header {
     background-color: #edefef; }
 
 .noteworthy-exhibits {
+  margin-top: 5em;
   clear: both; }
 
-.featured-exhibits:first-child {
-  padding-left: 0; }
-.featured-exhibits:last-child {
-  padding-right: 0; }
+.featured-exhibits .exhibit-list {
+  background-color: #edefef;
+  height: 490px;
+  margin-bottom: 20px;
+  border-left: 10px solid #d79713; }
+  .featured-exhibits .exhibit-list .exhibit {
+    height: 225px; }
+
+.full-exhibit-list {
+  background-color: #edefef;
+  border-left: 10px solid #d79713; }
 
 .exhibit {
   background-color: #fff;
   padding: 1em;
-  margin-bottom: 1em; }
+  margin-bottom: 20px;
+  clear: both;
+  overflow: hidden;
+  position: relative; }
+  .exhibit a.image img {
+    max-width: 100%; }
 
 .sub-header {
   background-color: #8a6b46;
   color: #fff;
   text-align: center;
   text-transform: uppercase; }
+
+.exhibit h3 > a:before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 2.5rem;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: #f7f6f8;
+  z-index: 50; }
+
+.exhibit h3 > a:after {
+  border: inset 16px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent transparent transparent #E5E2D7;
+  border-left-style: solid;
+  position: absolute;
+  right: -13px;
+  top: 50%;
+  margin-top: -16px;
+  z-index: 51; }
 
 /*# sourceMappingURL=style.css.map */

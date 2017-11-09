@@ -1,5 +1,21 @@
-$font-family-sans-serif:  "Open Sans","Helvetica Neue", Helvetica, sans-serif !default;
-$font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
+// BC COLORS
+$bc_maroon: #8a100b;
+$bc_dark_red: #501315;
+$bc_caption_blue: #183e50;
+$bc_caption_blue_bright: #0d5e93;
+$bc_figure_green: #5d694a;
+$bc_light_grey: #edefef;
+$bc_gold: #dccaa0;
+$bc_dark_gold: #8a6b46;
+$bc_bright_orange: #d79713;
 
-$navbar-default-bg: #fff;
-$navbar-default-toggle-border: #fff;
+$font-family-sans-serif: "Open Sans", "Helvetica Neue", Helvetica, sans-serif !default;
+$font-family-serif: Georgia, "Times New Roman", Times, serif !default;
+
+$body-bg: desaturate(lighten($bc_gold, 10%), 10%);
+
+$font-size-base: 16px;
+
+$header-bg: $bc_light_grey;
+$navbar-default-bg: $header-bg;
+$navbar-default-toggle-border: $header-bg;

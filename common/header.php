@@ -64,7 +64,7 @@
                     <!-- Collect the nav links, forms, and other content for toggling -->
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav navbar-right">
-                            <?php echo public_nav_main_bootstrap(); ?>
+                            <?php echo BC\public_nav_main_bootstrap(); ?>
                         </ul>
                     </div><!-- /.navbar-collapse -->
                 </div><!-- /.container-fluid -->
@@ -75,5 +75,4 @@
 
 </header>
 <main id="content" role="main">
-    <div class="container">
         <?php fire_plugin_hook('public_content_top', ['view' => $this]); ?>

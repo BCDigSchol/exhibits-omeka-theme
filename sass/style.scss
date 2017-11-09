@@ -1,13 +1,22 @@
+@grid-gutter-width:         300px;
+
+
 @import "bc-variables";
 @import "bootstrap";
 @import "bc-modular-header";
+
+@grid-gutter-width:         300px;
+
 
 .navbar {
   border: 0;
 }
 
 header {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4)
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: $header-bg;
+  z-index: 2;
+  position: relative;
 }
 
 .navbar {
@@ -41,12 +50,34 @@ header {
 
     & > li.active > a, & > li.active > a:hover, .nav-pills > li.active > a:focus {
       color: $text-color;
-      background-color: #fff;
+      background-color: $header-bg;
     }
   }
 }
 
-@media only screen and (min-width: 40.0625em) {
-  .nav-pills li {
+.noteworthy-exhibits {
+  clear: both
+}
+
+.featured-exhibits {
+  &:first-child {
+    padding-left: 0;
   }
+
+  &:last-child {
+    padding-right: 0;
+  }
+}
+
+.exhibit {
+  background-color: #fff;
+  padding: 1em;
+  margin-bottom: 1em;
+}
+
+.sub-header {
+  background-color: $bc_dark_gold;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
 }

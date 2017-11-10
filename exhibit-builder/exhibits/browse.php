@@ -71,7 +71,7 @@ $upcoming_exhibits = get_records('Exhibit', ['tags' => 'upcoming'], 2);
             <div class="exhibit">
                 <h3><?= link_to_exhibit(); ?></h3>
                 <div class="col-md-2">
-                    <?= BC\Helpers\linked_exhibit_thumb($exhibit); ?>
+                    <?= BC\Helpers\linked_exhibit_cover($exhibit); ?>
                 </div>
                 <div class="col-md-10 description">
                     <?= \BC\Helpers\truncated_description($exhibit, 200); ?>

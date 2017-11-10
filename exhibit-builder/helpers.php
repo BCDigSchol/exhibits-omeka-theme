@@ -5,9 +5,9 @@ namespace BC\Helpers;
 const TAG_FEATURED = 'featured';
 const TAG_UPCOMING = 'upcoming';
 
-function linked_exhibit_thumb($exhibit)
+function linked_exhibit_cover($exhibit, $size = 'thumbnail')
 {
-    $image = record_image($exhibit, 'thumbnail');
+    $image = record_image($exhibit, $size);
     return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
 }
 
@@ -36,7 +36,7 @@ function exhibit_brief_result($exhibit)
 {
     $link = link_to_exhibit(null, [], null, $exhibit);
 
-    $img = linked_exhibit_thumb($exhibit);
+    $img = linked_exhibit_cover($exhibit);
     $description = truncated_description($exhibit);
 
     return <<<EXHIBIT
@@ -65,4 +65,11 @@ function img_from_description($description)
         return "<div class=\"mainImage small-12 medium-4 large-4 columns\">$img_link</div>";
     }
     return '';
+}
+
+function page_tree()
+{
+    $tree = exhibit_builder_page_tree();
+    $tree_html = "<nav id=\"exhibit-pages\" class=\"col-md-3\">$tree</nav>";
+    return $tree ? $tree_html : '';
 }

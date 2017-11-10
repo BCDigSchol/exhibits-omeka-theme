@@ -1,15 +1,15 @@
-@grid-gutter-width:         300px;
-
+@grid-gutter-width :         300px;
 
 @import "bc-variables";
 @import "bootstrap";
 @import "bc-modular-header";
+@import "mixins";
 
-@grid-gutter-width:         300px;
-
+@grid-gutter-width :         300px;
 
 h1 {
-  font-size: 31px;
+  font-size: 38px;
+  margin: 11px 0;
 }
 
 h2 {
@@ -23,10 +23,10 @@ h2 {
 .navbar-left {
   font-size: 13px;
 
-  &> li {
+  & > li {
     display: inline-block;
 
-    &> a {
+    & > a {
       padding: 0 5px;
       margin-top: 15px;
 
@@ -94,6 +94,7 @@ $featured_exhibit_tail: 20px;
 $featured_exhibit_bottom_margin: 20px;
 
 $brief_result_left_border: $bc_bright_orange;
+$summary_left_border: $bc_bright_orange;
 
 .featured-exhibits {
 
@@ -164,4 +165,70 @@ $brief_result_left_border: $bc_bright_orange;
   top: 50%;
   margin-top: -16px;
   z-index: 51;
+}
+
+.summary {
+  #primary {
+    background-color: #fff;
+    padding: 1em;
+    border-left: 10px solid $bc_caption_blue_bright;
+  }
+
+  .exhibit-description img {
+    float: left;
+    margin-right: 1em;
+  }
+
+  .exhibit-credits h3 {
+    font-size: $font-size-base;
+  }
+}
+
+.enter-exhibit {
+  border: 3px solid #000;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+  position: relative;
+
+  & > a {
+    padding: 0.3rem 1.5rem 0.3rem 0.5rem;
+    margin: 2px;
+    background-color: $bc_caption_blue;
+    color: #fff;
+    display: inline-block;
+    position: relative;
+
+    &:hover {
+      background-color: lighten($bc_caption_blue, 8%);
+      text-decoration: none;
+    }
+
+    &:active {
+      text-decoration: none;
+    }
+  }
+  &:after {
+    @include css-triangle(8px, rgba(255, 255, 255, 0.8), left);
+    position: absolute;
+    top: 9px;
+    right: -4px;
+  }
+}
+
+nav#exhibit-pages {
+  background-color: rgba(255, 255, 255, .97);
+  padding: 4px 12px;
+  margin-top: 1em;
+
+  border-left: 10px solid  $bc_caption_blue_bright;
+
+  h3 {
+    font-size: 20px;
+  }
+
+  ul {
+    margin-left: 15px;
+    padding-left: 0;
+  }
 }

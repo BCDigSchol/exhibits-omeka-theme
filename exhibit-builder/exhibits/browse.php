@@ -1,5 +1,10 @@
 <?php
+
 $title = __('Exhibits');
+
+$result_count_display = __('(%s total)', $total_results);
+
+$page_title = "$title $result_count_display";
 
 $head = head(['title' => $title, 'bodyclass' => 'exhibits browse']);
 
@@ -16,17 +21,14 @@ $secondary_nav = nav(
     ]
 );
 
-$result_count_display = __('(%s total)', $total_results);
 
 $featured_exhibits = get_records('Exhibit', ['tags' => 'featured'], 2);
 $upcoming_exhibits = get_records('Exhibit', ['tags' => 'upcoming'], 2);
 ?>
 <?= $head ?>
-    <div class="sub-header">
-        <div class="container">
-            <h1><?= $title; ?> <?= $result_count_display; ?></h1>
-        </div>
-    </div>
+
+<?php include __DIR__ . '/page-title.php'; ?>
+
 <?php if (count($exhibits) > 0): ?>
     <div class="container">
 

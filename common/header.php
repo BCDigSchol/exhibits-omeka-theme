@@ -10,8 +10,8 @@
 
     <!-- Will build the page <title> -->
     <?php
-    if (isset($title)) {
-        $titleParts[] = strip_formatting($title);
+    if (isset($exhibit_title)) {
+        $titleParts[] = strip_formatting($exhibit_title);
     }
     $titleParts[] = option('site_title');
     ?>

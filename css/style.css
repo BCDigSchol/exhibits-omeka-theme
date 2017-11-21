@@ -5969,6 +5969,171 @@ button.close {
 @media (min-width: 992px) {
   #bclib-header .input-wrapper {
     padding-right: 0; } }
+.exhibit-nav .sub-section-title {
+  margin-left: 0.5em; }
+
+.exhibit-pages-wrap {
+  position: relative; }
+
+.exhibit-nav-wrap #exhibit-pages {
+  background-color: #fff; }
+
+.exhibit-nav-wrap > span {
+  padding-bottom: 0.5rem;
+  color: #fff;
+  display: none;
+  line-height: 1.2; }
+
+#upper-exhibit-nav-prev, #upper-exhibit-nav-next {
+  float: right; }
+
+#upper-exhibit-page-navigation {
+  float: right; }
+
+.upper-exhibit-nav {
+  position: relative; }
+
+.upper-exhibit-nav > a, .upper-exhibit-nav > a:hover {
+  background-color: transparent; }
+
+#upper-exhibit-nav-prev > a:after {
+  border: inset 15px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent #8a6b46 transparent transparent;
+  border-right-style: solid;
+  position: absolute;
+  top: 11px;
+  right: 0px; }
+
+#upper-exhibit-nav-prev > a:hover:after {
+  border: inset 15px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent #a58054 transparent transparent;
+  border-right-style: solid; }
+
+#upper-exhibit-nav-next > a:after {
+  border: inset 15px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent transparent transparent #8a6b46;
+  border-left-style: solid;
+  position: absolute;
+  top: 11px;
+  right: -15px; }
+
+#upper-exhibit-nav-next > a:hover:after {
+  border: inset 15px;
+  content: "";
+  display: block;
+  height: 0;
+  width: 0;
+  border-color: transparent transparent transparent #a58054;
+  border-left-style: solid; }
+
+#exhibit-page-navigation div {
+  width: 50%; }
+
+#exhibit-toggle {
+  display: none; }
+
+#exhibitToggle {
+  float: right;
+  margin: 0;
+  color: #fff;
+  position: relative;
+  padding: .5em; }
+
+.exhibit-nav-wrap {
+  display: none;
+  position: initial;
+  background-color: #8a6b46;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 100%;
+  z-index: 0; }
+
+#exhibit-toggle:checked ~ #exhibitToggle {
+  width: 100%; }
+
+#exhibit-toggle:checked ~ .exhibit-nav-wrap {
+  display: block; }
+
+.jump-to {
+  line-height: 1.2;
+  font-size: 100% !important;
+  display: inline-block;
+  cursor: pointer;
+  webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear; }
+
+.exhibit-burger-icon {
+  position: relative;
+  margin-top: 6px;
+  margin-bottom: 6px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  display: inline-block !important;
+  margin-left: 0.6rem !important;
+  z-index: 101;
+  float: right; }
+  .exhibit-burger-icon, .exhibit-burger-icon:before, .exhibit-burger-icon:after {
+    display: block;
+    width: 20px;
+    height: 3px;
+    background-color: #fff;
+    -webkit-transition-property: background-color, -webkit-transform;
+    -moz-transition-property: background-color, -moz-transform;
+    -o-transition-property: background-color, -o-transform;
+    transition-property: background-color, transform;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s; }
+  .exhibit-burger-icon:before, .exhibit-burger-icon:after {
+    position: absolute;
+    content: ""; }
+  .exhibit-burger-icon:before {
+    top: -6px; }
+  .exhibit-burger-icon:after {
+    top: 6px; }
+
+.exhibit-burger-icon, .exhibit-burger-icon:before, .exhibit-burger-icon:after {
+  margin-left: auto;
+  margin-right: auto; }
+
+.jump-to.is-active .exhibit-burger-icon {
+  background-color: transparent; }
+.jump-to.is-active .exhibit-burger-icon:before {
+  -webkit-transform: translateY(6px) rotate(45deg);
+  -moz-transform: translateY(6px) rotate(45deg);
+  -ms-transform: translateY(6px) rotate(45deg);
+  -o-transform: translateY(6px) rotate(45deg);
+  transform: translateY(6px) rotate(45deg); }
+.jump-to.is-active .exhibit-burger-icon:after {
+  -webkit-transform: translateY(-6px) rotate(-45deg);
+  -moz-transform: translateY(-6px) rotate(-45deg);
+  -ms-transform: translateY(-6px) rotate(-45deg);
+  -o-transform: translateY(-6px) rotate(-45deg);
+  transform: translateY(-6px) rotate(-45deg); }
+
+.next-page, .previous-page, .jump-to {
+  background-color: #183e50; }
+
 @grid-gutter-width :         300px;
 h1 {
   font-size: 38px;
@@ -5976,6 +6141,10 @@ h1 {
 
 h2 {
   font-size: 30px; }
+
+p {
+  font-size: 15px;
+  line-height: 1.6; }
 
 .navbar {
   border: 0; }
@@ -6079,12 +6248,22 @@ header {
 .summary #primary {
   background-color: #fff;
   padding: 1em;
-  border-left: 10px solid #0d5e93; }
+  border-left: 10px solid #8a6b46; }
 .summary .exhibit-description img {
   float: left;
   margin-right: 1em; }
 .summary .exhibit-credits h3 {
   font-size: 16px; }
+.summary nav#exhibit-pages {
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 4px 12px;
+  margin-top: 1em;
+  border-left: 10px solid #8a6b46; }
+  .summary nav#exhibit-pages h3 {
+    font-size: 20px; }
+  .summary nav#exhibit-pages ul {
+    margin-left: 15px;
+    padding-left: 0; }
 
 .enter-exhibit {
   border: 3px solid #000;
@@ -6098,7 +6277,9 @@ header {
     background-color: #183e50;
     color: #fff;
     display: inline-block;
-    position: relative; }
+    position: relative;
+    font-size: 20px;
+    text-transform: uppercase; }
     .enter-exhibit > a:hover {
       background-color: #21566f;
       text-decoration: none; }
@@ -6116,15 +6297,12 @@ header {
     top: 9px;
     right: -4px; }
 
-nav#exhibit-pages {
-  background-color: rgba(255, 255, 255, 0.97);
-  padding: 4px 12px;
-  margin-top: 1em;
-  border-left: 10px solid #0d5e93; }
-  nav#exhibit-pages h3 {
-    font-size: 20px; }
-  nav#exhibit-pages ul {
-    margin-left: 15px;
-    padding-left: 0; }
+#exhibit-blocks {
+  border-left: 10px solid #8a6b46; }
+  #exhibit-blocks .exhibit-block {
+    background-color: #ffffff;
+    padding: 16px;
+    margin-bottom: 24px;
+    overflow: hidden; }
 
 /*# sourceMappingURL=style.css.map */

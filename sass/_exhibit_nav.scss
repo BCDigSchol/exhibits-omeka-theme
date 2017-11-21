@@ -1,0 +1,125 @@
+.exhibit-nav .sub-section-title {
+  margin-left: 0.5em;
+}
+
+.exhibit-pages-wrap {
+  position: relative;
+}
+
+.exhibit-nav-wrap #exhibit-pages {
+  background-color: #fff;
+}
+
+.exhibit-nav-wrap > span {
+  padding-bottom: 0.5rem;
+  color: #fff;
+  display: none;
+  line-height: 1.2;
+}
+
+#upper-exhibit-nav-prev, #upper-exhibit-nav-next {
+  float: right;
+}
+
+#upper-exhibit-page-navigation {
+  float: right;
+}
+
+.upper-exhibit-nav {
+  position: relative;
+}
+
+.upper-exhibit-nav > a, .upper-exhibit-nav > a:hover {
+  background-color: transparent;
+}
+
+#upper-exhibit-nav-prev > a:after {
+  @include css-triangle(15px, $exhibit-color, right);
+  position: absolute;
+  top: 11px;
+  right: 0px;
+}
+
+#upper-exhibit-nav-prev > a:hover:after {
+  @include css-triangle(15px, lighten($exhibit-color, 8%), right);
+}
+
+#upper-exhibit-nav-next > a:after {
+  @include css-triangle(15px, $exhibit-color, left);
+  position: absolute;
+  top: 11px;
+  right: -15px;
+}
+
+#upper-exhibit-nav-next > a:hover:after {
+  @include css-triangle(15px, lighten($exhibit-color, 8%), left);
+}
+
+#exhibit-page-navigation div {
+  width: 50%;
+}
+
+#exhibit-toggle {
+  display: none;
+}
+
+#exhibitToggle {
+  float: right;
+  margin: 0;
+  color: #fff;
+  position: relative;
+  padding: .5em;
+}
+
+.exhibit-nav-wrap {
+  display: none;
+  position: initial;
+  background-color: $exhibit-color;
+  padding: 0.5rem;
+  margin: 0.5rem 0;
+  font-size: 100%;
+  z-index: 0;
+}
+
+#exhibit-toggle:checked ~ #exhibitToggle {
+  width: 100%;
+}
+
+#exhibit-toggle:checked ~ .exhibit-nav-wrap {
+  display: block;
+}
+
+.jump-to {
+  line-height: 1.2;
+  font-size: 100% !important;
+  display: inline-block;
+  cursor: pointer;
+  webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
+}
+
+.exhibit-burger-icon {
+  @include burger(20px, 3px, 3px, #fff);
+  display: inline-block !important;
+  margin-left: 0.6rem !important;
+  z-index: 101;
+  float: right;
+}
+
+.exhibit-burger-icon, .exhibit-burger-icon:before, .exhibit-burger-icon:after {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.jump-to.is-active .exhibit-burger-icon {
+  @include burger-to-cross;
+}
+
+.next-page, .previous-page, .jump-to {
+  background-color:  $bc_caption_blue;
+}

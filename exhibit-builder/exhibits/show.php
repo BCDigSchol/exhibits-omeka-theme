@@ -11,39 +11,35 @@ $page_title = 'Exhibits';
 ?>
 <?php include __DIR__ . '/page-title.php'; ?>
 <div class="container">
-    <div class="row">
-        <div class="cold-md-12">
-            <h1><span class="exhibit-page"><?= metadata('exhibit_page', 'title'); ?></span></h1>
-            <input type="checkbox" id="exhibit-toggle" />
-            <label for="exhibit-toggle" id="exhibitToggle" class="menu-button jump-to"  onclick="activate(this.id)">Jump to...
-                <span class="exhibit-burger-icon"></span></label>
-            <div class="exhibit-nav-wrap">
-                <span>Jump to...</span>
-                <nav id="exhibit-pages">
-                    <?php echo custom_exhibit_builder_page_nav(); //Function found in custom.php file ?>
-                </nav>
+    <div class="row exhibit-nav-row">
+        <h2 class="col-sm-8"><span class="exhibit-page"><?= metadata('exhibit_page', 'title'); ?></span></h2>
+        <div class="col-sm-3 col-sm-offset-1">
+            <?php include __DIR__ . '/exhibit-nav.php'; ?>
         </div>
-        <div class="col-md-12">
-            <div id="exhibit-blocks">
+    </div>
+    <div class="row">
+        <div class="col-sm-12" id="exhibit-blocks">
+            <div id="exhibit-blocks-wrap">
                 <?php exhibit_builder_render_exhibit_page(); ?>
-            </div>
 
-            <div id="exhibit-page-navigation">
-                <?php if ($prevLink = exhibit_builder_link_to_previous_page()): ?>
-                    <div id="exhibit-nav-prev">
-                        <?= $prevLink; ?>
-                    </div>
-                <?php endif; ?>
-                <?php if ($nextLink = exhibit_builder_link_to_next_page()): ?>
-                    <div id="exhibit-nav-next">
-                        <?= $nextLink; ?>
-                    </div>
-                <?php endif; ?>
-                <div id="exhibit-nav-up">
-                    <?= exhibit_builder_page_trail(); ?>
+                <div id="exhibit-page-navigation">
+                    <?php if ($prevLink = exhibit_builder_link_to_previous_page()): ?>
+                        <div id="exhibit-nav-prev">
+                            <?= $prevLink; ?>
+                        </div>
+                    <?php endif; ?>
+                    <?php if ($nextLink = exhibit_builder_link_to_next_page()): ?>
+                        <div id="exhibit-nav-next">
+                            <?= $nextLink; ?>
+                        </div>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
+    <div class="row">
+
+    </div>
+</div>
 </div>
 <?= foot(); ?>

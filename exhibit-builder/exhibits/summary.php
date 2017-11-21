@@ -39,6 +39,6 @@ $exhibit_uri = exhibit_builder_exhibit_uri($exhibit, $topPages[0]);
         </div>
     </div>
 
-    <?php include __DIR__ . '/exhibit-nav.php'; ?>
+    <?php include __DIR__ . '/summary-nav.php'; ?>
 </div>
 <?= foot(); ?>

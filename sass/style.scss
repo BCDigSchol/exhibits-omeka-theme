@@ -4,7 +4,7 @@
 @import "bootstrap";
 @import "bc-modular-header";
 @import "mixins";
-@import "exhibit_nav";
+@import "bc-exhibit-nav";
 
 @grid-gutter-width :         300px;
 
@@ -146,6 +146,10 @@ $summary_left_border: $bc_bright_orange;
   text-transform: uppercase;
 }
 
+.exhibits.show .sub-header {
+  background-color: $bc_exhibit-color;
+}
+
 .exhibit h3 > a:before {
   position: absolute;
   right: 0;
@@ -177,7 +181,7 @@ $summary_left_border: $bc_bright_orange;
   #primary {
     background-color: #fff;
     padding: 1em;
-    border-left: 10px solid $exhibit_color;
+    border-left: 10px solid $bc_exhibit-color;
   }
 
   .exhibit-description img {
@@ -194,7 +198,7 @@ $summary_left_border: $bc_bright_orange;
     padding: 4px 12px;
     margin-top: 1em;
 
-    border-left: 10px solid $exhibit-color;
+    border-left: 10px solid $bc_exhibit-color;
 
     h3 {
       font-size: 20px;
@@ -241,16 +245,20 @@ $summary_left_border: $bc_bright_orange;
   }
 }
 
-
-
 #exhibit-blocks {
-  border-left: 10px solid $exhibit-color;
+  border-left: 10px solid $bc_exhibit-color;
+  padding-left: 0;
 
-  .exhibit-block {
-    background-color: #ffffff;
-    padding: 16px;
-    margin-bottom: 24px;
+  #exhibit-blocks-wrap {
+    background-color: $bc_light_grey;
+    padding-bottom: 16px;
     overflow: hidden;
-  }
 
+    .exhibit-block {
+      background-color: #ffffff;
+      padding: 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+  }
 }

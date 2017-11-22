@@ -27,7 +27,7 @@ $upcoming_exhibits = get_records('Exhibit', ['tags' => 'upcoming'], 2);
 ?>
 <?= $head ?>
 
-<?php include __DIR__ . '/page-title.php'; ?>
+<?php include __DIR__ . '/../../common/page-title.php'; ?>
 
 <?php if (count($exhibits) > 0): ?>
     <div class="container">

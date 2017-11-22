@@ -2,6 +2,7 @@
 
 require_once __DIR__ . '/functions.php';
 require_once __DIR__ . '/exhibit-builder/helpers.php';
+require_once __DIR__ . '/lib/ExhibitList.php';
 
 /**
  * Return the markup for the exhibit page navigation.

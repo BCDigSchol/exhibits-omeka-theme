@@ -1,25 +1,11 @@
-.next-page, .previous-page {
-  background-color:  $bc_exhibit-color;
-  color: $bc_white;
-  padding: 8px;
-  margin: 8px;
-  font-size: 14px;
-}
+.exhibits.show {
+  .next-page, .previous-page {
+    background-color:  $bc_exhibit-color;
+  }
 
-.next-page:hover, .previous-page:hover {
-  background-color:  lighten($bc_exhibit-color, 10%);
-  text-decoration: none;
-  color: $bc_white
-}
-
-.exhibit-nav-prev {
-  width: 50%;
-}
-
-.exhibit-nav-next {
-  width: 50%;
-  float: right;
-  text-align: right;
+  .next-page:hover, .previous-page:hover {
+    background-color:  lighten($bc_exhibit-color, 10%);
+  }
 }
 
 .exhibit-nav-row {

@@ -5,6 +5,7 @@
 @import "bc-modular-header";
 @import "mixins";
 @import "bc-exhibit-nav";
+@import "bc-item-page";
 
 @grid-gutter-width :         300px;
 
@@ -261,4 +262,27 @@ $summary_left_border: $bc_bright_orange;
       overflow: hidden;
     }
   }
+}
+
+.next-page, .previous-page {
+  color: $bc_white;
+  padding: 8px;
+  margin: 8px;
+  font-size: 14px;
+}
+
+.next-page:hover, .previous-page:hover {
+  text-decoration: none;
+  color: $bc_white
+}
+
+.nav-prev {
+  width: 50%;
+}
+
+.nav-next {
+  width: 50%;
+  float: right;
+  text-align: right;
+  margin: 0;
 }

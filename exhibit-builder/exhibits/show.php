@@ -9,7 +9,7 @@ echo head(
 $page_title = 'Exhibits';
 
 ?>
-<?php include __DIR__ . '/page-title.php'; ?>
+<?php include __DIR__.'/../../common/page-title.php'; ?>
 <div class="container">
     <div class="row exhibit-nav-row">
         <h2 class="col-sm-8"><span class="exhibit-page"><?= metadata('exhibit_page', 'title'); ?></span></h2>

@@ -19,7 +19,7 @@ $exhibit_uri = exhibit_builder_exhibit_uri($exhibit, $topPages[0]);
 ?>
 <?= $head; ?>
 
-<?php include __DIR__ . '/page-title.php'; ?>
+<?php include __DIR__ . '/../../common/page-title.php'; ?>
 
 <div class="container summary">
     <h2><?= $exhibit_title; ?></h2>

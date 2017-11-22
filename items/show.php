@@ -1,68 +1,93 @@
-<?php 
-    echo head(['title' => metadata('item', ['Dublin Core', 'Title']), 'bodyclass' => 'items show']);
+<?php
+$head = head(['title' => metadata('item', ['Dublin Core', 'Title']), 'bodyclass' => 'items show']);
+
+$page_title = 'Items';
+
+$item_title = metadata('item', ['Dublin Core', 'Title']);
+
+$has_images = $item->Files;
+
+$files_html = files_for_item(['imageSize' => 'fullsize']);
+
+$omeka_db = get_db();
+$exhibit_list = new \BCLib\ExhibitList($omeka_db);
+$has_exhibits = $exhibit_list->hasExhibits($item);
+$exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
+
 ?>
 
-    <h1><?php echo metadata('item', ['Dublin Core', 'Title']); ?></h1>
+<?= $head; ?>
+
+<?php include __DIR__ . '/../common/page-title.php'; ?>
+
+<div class="container">
+    <div class="row">
+        <h2><?= $item_title; ?></h2>
+    </div>
 
     <div class="row">
-        <div class="col-sm-6">
-                <?php $images = $item->Files; $imagesCount = 1; ?>
-                <?php if ($images): ?>
-                <ul id="image-gallery" class="clearfix">
-                    <?php foreach ($images as $image): ?>
-                        <?php if ($imagesCount === 1): ?>
-                            <img src="<?php echo url('/'); ?>files/original/<?php echo $image->filename; ?>" />
-                        <?php endif; ?>
-                    <?php $imagesCount++; endforeach; ?>
-                </ul>
-                <?php else: ?>
-                    <div class="no-image">No photos available.</div>
-                <?php endif; ?>
-        </div>
-        </div>
-            <?php echo all_element_texts('item'); ?>
-        
-            <!-- The following returns all of the files associated with an item. -->
-            <?php if (metadata('item', 'has files')): ?>
-                <div id="itemfiles" class="element">
-                    <h3><?php echo __('Files'); ?></h3>
-                    <div class="element-text"><?php echo files_for_item(); ?></div>
+        <div class="col-md-8 col-sm-12 item-main">
+            <div class="metadata-box-wrap">
+                <div class="metadata-box">
+                    <?php if ($has_images): ?>
+                        <div class="item-file section row">
+                            <div class="sub-section">
+                                <?= $files_html ?>
+                            </div>
+                        </div>
+                    <?php else: ?>
+                        <div class="no-image">No photos available.</div>
+                    <?php endif; ?>
                 </div>
-            <?php endif; ?>
-            
-            <!-- If the item belongs to a collection, the following creates a link to that collection. -->
-            <?php if (metadata('item', 'Collection Name')): ?>
-                <div id="collection" class="element">
-                    <h3><?php echo __('Collection'); ?></h3>
-                    <div class="element-text"><p><?php echo link_to_collection_for_item(); ?></p></div>
-                </div>
-            <?php endif; ?>
-            
-            <!-- The following prints a list of all tags associated with the item -->
-            <?php if (metadata('item', 'has tags')): ?>
-                <div id="item-tags" class="element">
-                    <h3><?php echo __('Tags'); ?></h3>
-                    <div class="element-text"><?php echo tag_string('item'); ?></div>
-                </div>
-            <?php endif;?>
-            
-            <!-- The following prints a citation for this item. -->
-            <div id="item-citation" class="element">
-                <h3><?php echo __('Citation'); ?></h3>
-                <div class="element-text"><?php echo metadata('item', 'citation', ['no_escape' => true]); ?></div>
             </div>
-            
-            <div id="item-output-formats" class="element">
-                <h3><?php echo __('Output Formats'); ?></h3>
-                <div class="element-text"><?php echo output_format_list(); ?></div>
+            <div class="metadata-box-wrap">
+                <div class="metadata-box">
+                    <?php echo all_element_texts('item'); ?>
+                    <?php fire_plugin_hook('public_items_show', ['view' => $this, 'item' => $item]); ?>
+                </div>
             </div>
         </div>
+        <div class="col-md-4 col-sm-12 item-side">
+
+            <?php if ($has_exhibits): ?>
+                <div class="metadata-box-wrap">
+                    <div class="metadata-box">
+                        <div class="item section row">
+                            <div id="exhibit" class="element sub-section">
+                                <h3>Appears in Exhibits</h3>
+                                <div class="element-text">
+                                    <?php foreach ($exhibits as $exhibit): ?>
+                                        <p>
+                                            <a href="/exhibits/show/<?= $exhibit['slug']; ?>">
+                                        <?= $exhibit['title']; ?></a>
+                                        </p>
+                                    <?php endforeach; ?>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+
+            <div class="metadata-box-wrap">
+                <div class="metadata-box">
+                    <div id="item-citation" class="element">
+                        <h3><?php echo __('Citation'); ?></h3>
+                        <div class="element-text"><?php echo metadata(
+                                'item',
+                                'citation',
+                                ['no_escape' => true]
+                            ); ?></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
     </div>
-    
-    <?php fire_plugin_hook('public_items_show', ['view' => $this, 'item' => $item]); ?>
-    <ul class="pager">
-        <li class="previous"><?php echo link_to_previous_item_show(); ?></li>
-        <li class="next"><?php echo link_to_next_item_show(); ?></li>
-    </ul>
+
+        <div class="nav-prev"><?php echo link_to_previous_item_show(null, ['class'=>'previous-page']); ?></div>
+        <div class="nav-next"><?php echo link_to_next_item_show(null, ['class'=>'next-page']); ?></div>
+
+</div>
 
 <?php echo foot(); ?>

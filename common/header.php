@@ -24,7 +24,8 @@
 
     <!-- Need to add custom and third-party CSS files? Include them here -->
     <?php
-    queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700');
+    queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700');
+    queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
     queue_css_file('style');
     echo head_css();
     ?>

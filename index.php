@@ -1,33 +1,32 @@
-<?php echo head(['bodyid' =>'home']); ?>
+<?php
 
-<?php echo get_theme_option('Homepage About'); ?>
-<div class="row">
-    <div class="col-sm-4">
-        <?php if (get_theme_option('Display Featured Item') !== '0'): ?>
-            <h2><?php echo __('Featured Item'); ?></h2>
-            <?php echo random_featured_items(1); ?>
-        <?php endif; ?>
+$exhibits = \BC\front_page_exhibits();
+?>
+
+<?php echo head(['bodyid' => 'home']); ?>
+
+<main class="container">
+    <div class="row">
+        <figure class="col-sm-12 main-exhibit">
+            <img src="/files/theme_uploads/<?= $exhibits[1]->img; ?>" alt=""/>
+            <figcaption>
+                <div class="exhibit-title"><?= $exhibits[1]->text; ?></div>
+                <div class="exhibit-subtitle">Lorem ipsum and more text</div>
+            </figcaption>
+        </figure>
+        <figure class="col-sm-6 secondary-exhibit exhibit-two">
+            <img src="/files/theme_uploads/<?= $exhibits[2]->img; ?>" alt=""/>
+            <figcaption><div class="exhibit-title"><?= $exhibits[2]->text; ?></div>
+                <div class="exhibit-subtitle">Lorem ipsum and more text</div>
+            </figcaption>
+        </figure>
+        <figure class="col-sm-6 secondary-exhibit exhibit-three">
+            <img src="/files/theme_uploads/<?= $exhibits[3]->img; ?>" alt=""/>
+            <figcaption><div class="exhibit-title"><?= $exhibits[3]->text; ?></div>
+                <div class="exhibit-subtitle">Lorem ipsum and more text</div>
+            </figcaption>
+        </figure>
     </div>
-    <div class="col-sm-4">
-        <?php if (get_theme_option('Display Featured Collection') !== '0'): ?>
-            <h2><?php echo __('Featured Collection'); ?></h2>
-            <?php echo random_featured_collection(); ?>
-        <?php endif; ?>
-    </div>
-    <div class="col-sm-4">
-        <?php if ((get_theme_option('Display Featured Exhibit') !== '0') && plugin_is_active('ExhibitBuilder') && function_exists('exhibit_builder_display_random_featured_exhibit')): ?>
-            <?php echo exhibit_builder_display_random_featured_exhibit(); ?>
-        <?php endif; ?>
-    </div>
-</div>    
-<div class="row">
-    <div class="col-sm-12">
-        <h2><?php echo __('Recently Added Items'); ?></h2>
-        <?php echo recent_items(3); ?>
-        <p class="view-items-link"><a href="<?php echo html_escape(url('items')); ?>"><?php echo __('View All Items'); ?></a></p>
-    </div>
-    
-    <?php fire_plugin_hook('public_home', ['view' => $this]); ?>
-</div>
+</main>
 
 <?php echo foot(); ?>

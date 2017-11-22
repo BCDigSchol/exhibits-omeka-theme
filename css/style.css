@@ -1073,7 +1073,7 @@ body {
   font-size: 16px;
   line-height: 1.42857;
   color: #333333;
-  background-color: #e6ddc9; }
+  background-color: #efeadf; }
 
 input,
 button,
@@ -1110,7 +1110,7 @@ img {
 .img-thumbnail {
   padding: 4px;
   line-height: 1.42857;
-  background-color: #e6ddc9;
+  background-color: #efeadf;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: all 0.2s ease-in-out;
@@ -2219,7 +2219,7 @@ th {
   .table > tbody + tbody {
     border-top: 2px solid #ddd; }
   .table .table {
-    background-color: #e6ddc9; }
+    background-color: #efeadf; }
 
 .table-condensed > thead > tr > th,
 .table-condensed > thead > tr > td,
@@ -3607,7 +3607,7 @@ tbody.collapse.in {
         border-color: #eeeeee #eeeeee #ddd; }
     .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
       color: #555555;
-      background-color: #e6ddc9;
+      background-color: #efeadf;
       border: 1px solid #ddd;
       border-bottom-color: transparent;
       cursor: default; }
@@ -3665,7 +3665,7 @@ tbody.collapse.in {
     .nav-tabs.nav-justified > .active > a:hover,
     .nav-tabs-justified > .active > a:focus,
     .nav-tabs.nav-justified > .active > a:focus {
-      border-bottom-color: #e6ddc9; } }
+      border-bottom-color: #efeadf; } }
 
 .tab-content > .tab-pane {
   display: none; }
@@ -4328,7 +4328,7 @@ a.badge:hover, a.badge:focus {
   padding: 4px;
   margin-bottom: 22px;
   line-height: 1.42857;
-  background-color: #e6ddc9;
+  background-color: #efeadf;
   border: 1px solid #ddd;
   border-radius: 4px;
   -webkit-transition: border 0.2s ease-in-out;
@@ -6033,6 +6033,34 @@ button.close {
   max-width: 100%; }
 .items.show .previous-page, .items.show .next-page {
   background-color: #ac6d37; }
+
+#home main {
+  margin-top: 3em; }
+#home figure {
+  padding: 0; }
+  #home figure img {
+    width: 100%; }
+#home figcaption {
+  padding: .5em 1em;
+  position: absolute;
+  z-index: 10;
+  top: 0;
+  background-color: #ffffff;
+  border-left-width: 10px;
+  border-left-style: solid;
+  box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.4); }
+  #home figcaption .exhibit-title {
+    font-family: "Open Sans Condensed", sans-serif; }
+#home .main-exhibit figcaption {
+  border-left-color: orange; }
+  #home .main-exhibit figcaption .exhibit-title {
+    font-size: 42px; }
+#home .exhibit-two figcaption .exhibit-title, #home .exhibit-three figcaption .exhibit-title {
+  font-size: 24px; }
+#home .exhibit-two figcaption {
+  border-left-color: purple; }
+#home .exhibit-three figcaption {
+  border-left-color: green; }
 
 @grid-gutter-width :         300px;
 h1 {

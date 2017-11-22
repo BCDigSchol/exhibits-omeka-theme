@@ -1,0 +1,58 @@
+#home {
+  main {
+    margin-top: 3em;
+  }
+
+  figure {
+    padding: 0;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  figcaption {
+    padding: .5em 1em;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    background-color: $bc_white;
+    border-left-width: 10px;
+    border-left-style: solid;
+    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.4);
+
+    .exhibit-title {
+      font-family: "Open Sans Condensed", sans-serif;
+    }
+
+  }
+
+  .main-exhibit {
+    figcaption {
+      border-left-color: orange;
+      .exhibit-title {
+        font-size: 42px;
+      }
+    }
+  }
+
+  .exhibit-two, .exhibit-three {
+    figcaption {
+      .exhibit-title {
+        font-size: 24px;
+      }
+    }
+  }
+
+  .exhibit-two {
+    figcaption {
+      border-left-color: purple;
+    }
+  }
+
+  .exhibit-three {
+    figcaption {
+      border-left-color: green;
+    }
+  }
+}

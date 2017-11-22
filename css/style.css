@@ -6018,6 +6018,8 @@ button.close {
             left: -15px;
             color: #008CBA; }
 
+.items.show .sub-header {
+  background-color: #ac6d37; }
 .items.show .metadata-box-wrap {
   background-color: #edefef;
   border-left: 10px solid #ac6d37;
@@ -6094,13 +6096,13 @@ header {
   background-color: #edefef;
   height: 490px;
   margin-bottom: 20px;
-  border-left: 10px solid #d79713; }
+  border-left: 10px solid #234673; }
   .featured-exhibits .exhibit-list .exhibit {
     height: 225px; }
 
 .full-exhibit-list {
   background-color: #edefef;
-  border-left: 10px solid #d79713; }
+  border-left: 10px solid #234673; }
 
 .exhibit {
   background-color: #fff;
@@ -6113,12 +6115,11 @@ header {
     max-width: 100%; }
 
 .sub-header {
-  background-color: #8a6b46;
   color: #fff;
   text-align: center;
   text-transform: uppercase; }
 
-.exhibits.show .sub-header {
+.exhibits .sub-header {
   background-color: #234673; }
 
 .exhibit h3 > a:before {

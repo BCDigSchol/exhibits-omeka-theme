@@ -1,4 +1,8 @@
 .items.show {
+  .sub-header {
+    background-color: $bc_item-color;
+  }
+
   .metadata-box-wrap {
     background-color: $bc_light_grey;
     border-left: 10px solid $bc_item-color;

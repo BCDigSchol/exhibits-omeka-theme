@@ -100,7 +100,7 @@ $featured_exhibit_height: 225px;
 $featured_exhibit_tail: 20px;
 $featured_exhibit_bottom_margin: 20px;
 
-$brief_result_left_border: $bc_bright_orange;
+$brief_result_left_border: $bc_exhibit-color;
 $summary_left_border: $bc_bright_orange;
 
 .featured-exhibits {
@@ -141,13 +141,12 @@ $summary_left_border: $bc_bright_orange;
 }
 
 .sub-header {
-  background-color: $bc_dark_gold;
   color: #fff;
   text-align: center;
   text-transform: uppercase;
 }
 
-.exhibits.show .sub-header {
+.exhibits .sub-header {
   background-color: $bc_exhibit-color;
 }
 

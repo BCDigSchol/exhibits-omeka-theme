@@ -6094,20 +6094,29 @@ header {
     font-size: 24px; }
   .navbar ul.navbar-right {
     margin-top: 21px; }
-  .navbar .nav-pills > li {
-    text-transform: uppercase;
-    margin-right: 16px;
-    float: none;
-    display: inline-block;
-    font-size: 18px;
-    vertical-align: baseline; }
-    .navbar .nav-pills > li > a {
-      padding: 0; }
-  .navbar .nav-pills > li.active {
-    border-top: 2px solid blue; }
-  .navbar .nav-pills > li.active > a, .navbar .nav-pills > li.active > a:hover, .navbar .nav-pills .nav-pills > li.active > a:focus {
-    color: #333333;
-    background-color: #edefef; }
+    .navbar ul.navbar-right li {
+      text-transform: uppercase;
+      margin-right: 16px;
+      float: none;
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: baseline; }
+      .navbar ul.navbar-right li > a {
+        padding: 0; }
+    .navbar ul.navbar-right .nav-pills > li {
+      text-transform: uppercase;
+      margin-right: 16px;
+      float: none;
+      display: inline-block;
+      font-size: 18px;
+      vertical-align: baseline; }
+      .navbar ul.navbar-right .nav-pills > li > a {
+        padding: 0; }
+    .navbar ul.navbar-right .nav-pills > li.active {
+      border-top: 2px solid blue; }
+    .navbar ul.navbar-right .nav-pills > li.active > a, .navbar ul.navbar-right .nav-pills > li.active > a:hover, .navbar ul.navbar-right .nav-pills .nav-pills > li.active > a:focus {
+      color: #333333;
+      background-color: #edefef; }
 
 .noteworthy-exhibits {
   margin-top: 5em;
@@ -6155,13 +6164,12 @@ header {
   z-index: 50; }
 
 .exhibit h3 > a:after {
-  border: inset 16px;
   content: "";
   display: block;
   height: 0;
   width: 0;
-  border-color: transparent transparent transparent #E5E2D7;
-  border-left-style: solid;
+  border: 16px inset transparent;
+  border-left: solid #E5E2D7;
   position: absolute;
   right: -13px;
   top: 50%;

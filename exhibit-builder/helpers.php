@@ -73,3 +73,7 @@ function page_tree()
     $tree_html = "<nav id=\"exhibit-pages\" class=\"col-md-3\">$tree</nav>";
     return $tree ? $tree_html : '';
 }
+
+function citation_date($start_date, $end_date)
+{
+}

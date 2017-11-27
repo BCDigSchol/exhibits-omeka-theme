@@ -6021,14 +6021,7 @@ button.close {
 .items.show .sub-header {
   background-color: #ac6d37; }
 .items.show .metadata-box-wrap {
-  background-color: #edefef;
-  border-left: 10px solid #ac6d37;
-  padding-bottom: 16px;
-  margin-bottom: 26px; }
-  .items.show .metadata-box-wrap .metadata-box {
-    background-color: #ffffff;
-    padding: 16px 32px 32px 32px;
-    overflow: hidden; }
+  border-left: 10px solid #ac6d37; }
 .items.show .item-main img {
   max-width: 100%; }
 .items.show .previous-page, .items.show .next-page {
@@ -6198,7 +6191,7 @@ header {
 .enter-exhibit {
   border: 3px solid #000;
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 26px;
   margin-left: 1rem;
   position: relative; }
   .enter-exhibit > a {
@@ -6258,5 +6251,15 @@ header {
   float: right;
   text-align: right;
   margin: 0; }
+
+.metadata-box-wrap {
+  background-color: #edefef;
+  border-left: 10px solid #234673;
+  padding-bottom: 16px;
+  margin-bottom: 26px; }
+  .metadata-box-wrap .metadata-box {
+    background-color: #ffffff;
+    padding: 16px 32px 32px 32px;
+    overflow: hidden; }
 
 /*# sourceMappingURL=style.css.map */

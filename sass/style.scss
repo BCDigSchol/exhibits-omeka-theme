@@ -215,7 +215,7 @@ $summary_left_border: $bc_bright_orange;
 .enter-exhibit {
   border: 3px solid #000;
   display: inline-block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 26px;
   margin-left: 1rem;
   position: relative;
 
@@ -285,4 +285,17 @@ $summary_left_border: $bc_bright_orange;
   float: right;
   text-align: right;
   margin: 0;
+}
+
+.metadata-box-wrap {
+  background-color: $bc_light_grey;
+  border-left: 10px solid $bc_exhibit-color;
+  padding-bottom: 16px;
+  margin-bottom: 26px;
+
+  .metadata-box {
+    background-color: $bc-white;
+    padding: 16px 32px 32px 32px;
+    overflow: hidden;
+  }
 }

@@ -2,6 +2,8 @@
 
     <span class="enter-exhibit"><a href="<?= $exhibit_uri; ?>">view exhibit</a></span>
 
+    <?php include __DIR__.'/citation-box.php'; ?>
+
     <?php set_exhibit_pages_for_loop_by_exhibit(); ?>
     <nav id="exhibit-pages" class="section exhibit-nav">
         <h3 class="sub-section-title"><?= __('Jump to...'); ?></h3>

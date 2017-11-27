@@ -5969,6 +5969,37 @@ button.close {
 @media (min-width: 992px) {
   #bclib-header .input-wrapper {
     padding-right: 0; } }
+header {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: #edefef;
+  z-index: 2;
+  position: relative; }
+  header .navbar {
+    margin-bottom: 8px; }
+    header .navbar h1 {
+      font-size: 24px; }
+    header .navbar ul.navbar-right {
+      margin-top: 21px; }
+      header .navbar ul.navbar-right li {
+        text-transform: uppercase;
+        margin-right: 16px;
+        float: none;
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: baseline;
+        padding-top: 2px; }
+        header .navbar ul.navbar-right li.home {
+          border-top-color: #dccaa0; }
+        header .navbar ul.navbar-right li.exhibit {
+          border-top-color: #234673; }
+        header .navbar ul.navbar-right li > a {
+          padding: 0; }
+        header .navbar ul.navbar-right li.active {
+          border-top-width: 4px;
+          border-top-style: solid; }
+          header .navbar ul.navbar-right li.active a, header .navbar ul.navbar-right li.active a:hover, header .navbar ul.navbar-right li.active a:focus {
+            background-color: #edefef; }
+
 .exhibits.show .next-page, .exhibits.show .previous-page {
   background-color: #234673; }
 .exhibits.show .next-page:hover, .exhibits.show .previous-page:hover {
@@ -6081,42 +6112,6 @@ p {
         background-color: transparent; }
     .navbar-left > li.active a {
       border-top: 2px solid brown; }
-
-header {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
-  background-color: #edefef;
-  z-index: 2;
-  position: relative; }
-
-.navbar {
-  margin-bottom: 8px; }
-  .navbar h1 {
-    font-size: 24px; }
-  .navbar ul.navbar-right {
-    margin-top: 21px; }
-    .navbar ul.navbar-right li {
-      text-transform: uppercase;
-      margin-right: 16px;
-      float: none;
-      display: inline-block;
-      font-size: 18px;
-      vertical-align: baseline; }
-      .navbar ul.navbar-right li > a {
-        padding: 0; }
-    .navbar ul.navbar-right .nav-pills > li {
-      text-transform: uppercase;
-      margin-right: 16px;
-      float: none;
-      display: inline-block;
-      font-size: 18px;
-      vertical-align: baseline; }
-      .navbar ul.navbar-right .nav-pills > li > a {
-        padding: 0; }
-    .navbar ul.navbar-right .nav-pills > li.active {
-      border-top: 2px solid blue; }
-    .navbar ul.navbar-right .nav-pills > li.active > a, .navbar ul.navbar-right .nav-pills > li.active > a:hover, .navbar ul.navbar-right .nav-pills .nav-pills > li.active > a:focus {
-      color: #333333;
-      background-color: #edefef; }
 
 .noteworthy-exhibits {
   margin-top: 5em;

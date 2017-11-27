@@ -4,6 +4,7 @@
 @import "bootstrap";
 @import "bc-modular-header";
 @import "mixins";
+@import "_bc-header.scss";
 @import "bc-exhibit-nav";
 @import "bc-item-page";
 @import "bc-home";
@@ -45,63 +46,6 @@ p {
 
     &.active a {
       border-top: 2px solid brown
-    }
-  }
-}
-
-header {
-  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
-  background-color: $header-bg;
-  z-index: 2;
-  position: relative;
-}
-
-.navbar {
-  margin-bottom: 8px;
-
-  h1 {
-    font-size: 24px;
-  }
-
-  ul.navbar-right {
-    margin-top: 21px;
-
-    li {
-      text-transform: uppercase;
-      margin-right: 16px;
-      float: none;
-      display: inline-block;
-      font-size: 18px;
-      vertical-align: baseline;
-
-      & > a {
-        padding: 0;
-      }
-
-    }
-
-    .nav-pills {
-      & > li {
-        text-transform: uppercase;
-        margin-right: 16px;
-        float: none;
-        display: inline-block;
-        font-size: 18px;
-        vertical-align: baseline;
-
-        & > a {
-          padding: 0;
-        }
-      }
-
-      & > li.active {
-        border-top: 2px solid blue;
-      }
-
-      & > li.active > a, & > li.active > a:hover, .nav-pills > li.active > a:focus {
-        color: $text-color;
-        background-color: $header-bg;
-      }
     }
   }
 }

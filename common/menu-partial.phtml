@@ -1,37 +1,31 @@
-<?php $count = 0 ?>
-<?php foreach ($this->container as $page): ?>
-    <?php if (!$page->isVisible() || !$this->navigation()->accept($page)) {
-        continue;
-    } ?>
-    <?php $hasChildren = $page->hasPages() ?>
-    <?php if (!$hasChildren): ?>
-        <li <?php if ($page->isActive()) echo 'class="active"' ?> role="presentation">
-            <a class="nav-header" href="<?php echo $page->getHref() ?>">
-                <?php echo $this->translate($page->getLabel()) ?>
-            </a>
-        </li>
-    <?php else: ?>
-        <li class="dropdown <?php if ($page->isActive()) {
-            echo 'active';
-        } ?>" role="presentation">
+<?php $count = 0;
+
+$menu = new \BCLib\NavMenu($this->container);
+$pages = $menu->pages();
+
+?>
+<?php foreach ($pages as $page): ?>
+    <?php if ($page->has_submenu): ?>
+        <li class="dropdown <?= $page->active_status; ?>" role="presentation">
             <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
-                <?php echo $this->translate($page->getLabel()) ?>
+                <?= $page->label; ?>
                 <span class="caret"></span>
             </a>
-
-            <ul class="dropdown-menu" id="page_<?php echo $count ?>">
-                <?php foreach ($page->getPages() as $child): ?>
-                    <?php if (!$child->isVisible() || !$this->navigation()->accept($child)) {
-                        continue;
-                    } ?>
-                    <li <?php if ($child->isActive()) echo 'class="active"' ?>>
-                        <a href="<?php echo $child->getHref() ?>">
-                            <?php echo $this->translate($child->getLabel()) ?>
+            <ul class="dropdown-menu">
+                <?php foreach ($page->pages() as $child): ?>
+                    <li class="<?= $page->class; ?> <?= $child->active_status; ?>">
+                        <a href="<?= $child->href; ?>">
+                            <?= $child->label; ?>
                         </a>
                     </li>
                 <?php endforeach ?>
             </ul>
         </li>
+    <?php else: ?>
+        <li class="<?= $page->class; ?> <?= $page->active_status; ?>" role="presentation">
+            <a class="nav-header" href="<?= $page->href; ?>">
+                <?= $page->label; ?>
+            </a>
+        </li>
     <?php endif; ?>
-    <?php $count++ ?>
 <?php endforeach; ?>

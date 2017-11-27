@@ -1,0 +1,51 @@
+header {
+  box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.4);
+  background-color: $header-bg;
+  z-index: 2;
+  position: relative;
+
+  .navbar {
+    margin-bottom: 8px;
+
+    h1 {
+      font-size: 24px;
+    }
+
+    ul.navbar-right {
+      margin-top: 21px;
+
+      li {
+        text-transform: uppercase;
+        margin-right: 16px;
+        float: none;
+        display: inline-block;
+        font-size: 18px;
+        vertical-align: baseline;
+        padding-top: 2px;
+
+
+
+        &.home {
+          border-top-color: $bc_home-color;
+        }
+
+        &.exhibit {
+          border-top-color: $bc_exhibit-color;
+        }
+
+        & > a {
+          padding: 0;
+        }
+
+        &.active {
+          border-top-width: 4px;
+          border-top-style: solid;
+
+          a, a:hover, a:focus {
+            background-color: $header-bg;
+          }
+        }
+      }
+    }
+  }
+}

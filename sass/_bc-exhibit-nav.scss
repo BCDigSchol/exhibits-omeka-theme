@@ -23,7 +23,7 @@
     z-index: 1;
     background: $bc_exhibit-color;
     padding: 0;
-    box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: $bc_box-shadow;
 
     & > p {
       text-align: right;

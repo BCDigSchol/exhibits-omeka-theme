@@ -19,7 +19,7 @@
     background-color: $bc_white;
     border-left-width: 10px;
     border-left-style: solid;
-    box-shadow: 0 4px 7px 0 rgba(0, 0, 0, 0.4);
+    box-shadow: $bc_box-shadow;
 
     .exhibit-title {
       font-family: "Open Sans Condensed", sans-serif;

@@ -6001,6 +6001,46 @@ header {
           header .navbar ul.navbar-right li.active a, header .navbar ul.navbar-right li.active a:hover, header .navbar ul.navbar-right li.active a:focus {
             background-color: #edefef; }
 
+footer {
+  margin-top: 3em; }
+
+#bc-footer {
+  background: #501315;
+  padding: 15px 0;
+  margin-top: 0;
+  font-size: 11px;
+  line-height: 11px; }
+  #bc-footer .row {
+    padding: 10px 0; }
+    #bc-footer .row p {
+      font-size: 11px;
+      line-height: 11px; }
+    #bc-footer .row .col-md-9 {
+      text-align: right; }
+  #bc-footer .bc-links {
+    margin-top: 10px; }
+    #bc-footer .bc-links ul {
+      list-style: none; }
+      #bc-footer .bc-links ul li {
+        border-color: #501315;
+        text-transform: uppercase;
+        padding-right: 20px;
+        border-right: solid 1px #ffffff;
+        margin-right: 20px;
+        display: inline-block; }
+        #bc-footer .bc-links ul li a {
+          color: #ffffff; }
+          #bc-footer .bc-links ul li a :focus, #bc-footer .bc-links ul li a:hover {
+            color: #dccaa0;
+            text-decoration: none; }
+      #bc-footer .bc-links ul li:last-child {
+        padding-right: 0;
+        margin-right: 0;
+        border-right: none; }
+  #bc-footer .copyright {
+    color: #b7b7b7;
+    margin-top: 20px; }
+
 .exhibits.show .next-page, .exhibits.show .previous-page {
   background-color: #234673; }
 .exhibits.show .next-page:hover, .exhibits.show .previous-page:hover {

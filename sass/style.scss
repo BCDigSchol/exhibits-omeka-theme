@@ -4,7 +4,8 @@
 @import "bootstrap";
 @import "bc-modular-header";
 @import "mixins";
-@import "_bc-header.scss";
+@import "bc-header";
+@import "bc-footer";
 @import "bc-exhibit-nav";
 @import "bc-item-page";
 @import "bc-home";

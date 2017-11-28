@@ -20,7 +20,7 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
 
 <?php include __DIR__ . '/../common/page-title.php'; ?>
 
-<div class="container">
+<main id="content" class="container">
     <div class="row">
         <h2><?= $item_title; ?></h2>
     </div>
@@ -88,6 +88,6 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
         <div class="nav-prev"><?php echo link_to_previous_item_show(null, ['class'=>'previous-page']); ?></div>
         <div class="nav-next"><?php echo link_to_next_item_show(null, ['class'=>'next-page']); ?></div>
 
-</div>
+</main>
 
 <?php echo foot(); ?>

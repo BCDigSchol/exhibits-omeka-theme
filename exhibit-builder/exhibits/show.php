@@ -41,5 +41,4 @@ $page_title = 'Exhibits';
 
     </div>
 </div>
-</div>
 <?= foot(); ?>

@@ -1,6 +1,6 @@
 <div class="exhibit-nav-container">
     <p>
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exihibit-nav-box" aria-expanded="false" aria-controls="collapseExample">
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#exihibit-nav-box" aria-expanded="false" aria-controls="exihibit-nav-box">
             Jump to…
         </button>
     </p>

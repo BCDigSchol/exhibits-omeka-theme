@@ -1,5 +1,5 @@
 <div class="sub-header">
     <div class="container">
-        <h1><?= $page_title ?></h1>
+        <h2><?= $page_title ?></h2>
     </div>
 </div>

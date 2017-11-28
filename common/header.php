@@ -44,7 +44,7 @@
 <?php echo body_tag(['id' => @$bodyid, 'class' => @$bodyclass]); ?>
 <?php fire_plugin_hook('public_body', ['view' => $this]); ?>
 <?php include __DIR__ . '/bclib_header.html'; ?>
-<header role="banner">
+<header>
     <div class="container">
         <div class="row">
             <?php fire_plugin_hook('public_header', ['view' => $this]); ?>
@@ -58,8 +58,7 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                            <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
-                        </a>
+                        <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->
@@ -75,5 +74,4 @@
     </div>
 
 </header>
-<main id="content" role="main">
-        <?php fire_plugin_hook('public_content_top', ['view' => $this]); ?>
+<?php fire_plugin_hook('public_content_top', ['view' => $this]); ?>

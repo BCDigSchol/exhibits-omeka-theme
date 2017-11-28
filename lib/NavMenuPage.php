@@ -15,7 +15,7 @@ class NavMenuPage
     public $href;
     public $class;
 
-    public function __construct(\Omeka_Navigation_Page_Uri $omeka_page)
+    public function __construct(\Zend_Navigation_Page $omeka_page)
     {
         $this->omeka_page = $omeka_page;
         $this->active_status = $omeka_page->isActive() ? 'active' : '';

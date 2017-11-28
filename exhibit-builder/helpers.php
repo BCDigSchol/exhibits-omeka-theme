@@ -43,14 +43,17 @@ function exhibit_brief_result($exhibit)
         <div class="sub-section exhibit">
             <h3 class="sub-section-title">$link</h3>
             <div class="col-md-4">$img</div>
-            <div class="description col-md-8 columns">{$description}…</div>
+            <div class="description col-md-8 columns">{$description}</div>
         </div>
 EXHIBIT;
 }
 
-function truncated_description($exhibit, $length = 200)
+function truncated_description($exhibit, $length = 200, $brief=true)
 {
-    return substr(strip_tags($exhibit->description), 0, $length);
+    $description = $brief ? $exhibit->brief_description : $exhibit->description;
+    $description = strip_tags($description);
+    $truncated = substr($description, 0, $length + 1);
+    return $truncated === $description ? $description : preg_replace('/\W+?(\w+)?$/u', '…', $truncated);
 }
 
 function img_from_description($description)

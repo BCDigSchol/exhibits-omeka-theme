@@ -22,16 +22,41 @@ class ExhibitList
         return (!empty($this->exhibits));
     }
 
-    public function exhibits(\Item $item) {
+    public function exhibits(\Item $item)
+    {
         $related_exhibits = [];
         $this->lazyLoad($item);
         foreach ($this->exhibits as $exhibit) {
             $related_exhibits[] = [
                 'title' => $exhibit[0]->title,
-                'slug' => $exhibit[0]->slug
+                'slug'  => $exhibit[0]->slug
             ];
         }
         return array_unique($related_exhibits);
+    }
+
+    public function topExhibits()
+    {
+        $exhibits = [];
+
+        for ($i = 1; $i <= 3; $i++) {
+            $slug = get_theme_option("Front exhibit $i");
+
+            if (!$slug) {
+                _log("No slug found for Front exhibit $i", \Zend_Log::ERR);
+                break;
+            }
+
+            $exhibit = $this->getExhibitBySlug($slug);
+            if (!$exhibit) {
+                _log("No front-page exhibit with slug $slug", \Zend_Log::ERR);
+                break;
+            }
+
+            $exhibits[] = $exhibit;
+        }
+
+        return $exhibits;
     }
 
     private function load(\Item $item)
@@ -46,6 +71,12 @@ class ExhibitList
     WHERE epba.item_id = ?
 SQL;
         $this->exhibits[$item->id] = $this->db->getTable('Exhibit')->fetchObjects($select, [$item->id]);
+    }
+
+    private function getExhibitBySlug($slug)
+    {
+        $exhibits = $this->db->getTable('Exhibit')->findBy(['slug' => $slug]);
+        return count($exhibits) ? $exhibits[0] : null;
     }
 
     /**

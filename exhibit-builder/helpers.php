@@ -7,7 +7,7 @@ const TAG_UPCOMING = 'upcoming';
 
 function linked_exhibit_cover($exhibit, $size = 'thumbnail')
 {
-    $image = record_image($exhibit, $size);
+    $image = record_image($exhibit, $size, ['alt' => '']);
     return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
 }
 
@@ -75,8 +75,4 @@ function page_tree()
     $tree = exhibit_builder_page_tree();
     $tree_html = "<nav id=\"exhibit-pages\" class=\"col-md-3\">$tree</nav>";
     return $tree ? $tree_html : '';
-}
-
-function citation_date($start_date, $end_date)
-{
 }

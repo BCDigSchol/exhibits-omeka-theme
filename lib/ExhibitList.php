@@ -16,12 +16,20 @@ class ExhibitList
         $this->db = $db;
     }
 
+    /**
+     * @param \Item $item
+     * @return bool
+     */
     public function hasExhibits(\Item $item)
     {
         $this->lazyLoad($item);
         return (!empty($this->exhibits));
     }
 
+    /**
+     * @param \Item $item
+     * @return array
+     */
     public function exhibits(\Item $item)
     {
         $related_exhibits = [];
@@ -35,6 +43,9 @@ class ExhibitList
         return array_unique($related_exhibits);
     }
 
+    /**
+     * @return \Exhibit[]
+     */
     public function topExhibits()
     {
         $exhibits = [];
@@ -73,6 +84,10 @@ SQL;
         $this->exhibits[$item->id] = $this->db->getTable('Exhibit')->fetchObjects($select, [$item->id]);
     }
 
+    /**
+     * @param $slug
+     * @return \Exhibit
+     */
     private function getExhibitBySlug($slug)
     {
         $exhibits = $this->db->getTable('Exhibit')->findBy(['slug' => $slug]);

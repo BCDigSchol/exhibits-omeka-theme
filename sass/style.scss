@@ -25,13 +25,19 @@ p {
 }
 
 .noteworthy-exhibits {
-  margin-top: 5em;
+  margin-top: 1em;
   clear: both
 }
 
 $featured_exhibit_height: 225px;
 $featured_exhibit_tail: 20px;
 $featured_exhibit_bottom_margin: 20px;
+
+.exhibits.browse {
+  .secondary-nav {
+    display: none;
+  }
+}
 
 .featured-exhibits {
 

@@ -9,6 +9,8 @@ $exhibits = $exhibit_list->topExhibits();
 
 <main id="content" class="container">
     <div class="row">
+
+        <?php if (isset($exhibits[0])): ?>
         <figure class="col-sm-12 main-exhibit">
             <?= \BC\Helpers\linked_exhibit_cover($exhibits[0], 'original') ?>
             <figcaption>
@@ -16,6 +18,7 @@ $exhibits = $exhibit_list->topExhibits();
                 <div class="exhibit-subtitle"><?= $exhibits[0]->subtitle; ?></div>
             </figcaption>
         </figure>
+        <?php endif; ?>
 
         <?php if (isset($exhibits[1])): ?>
             <figure class="col-sm-6 secondary-exhibit exhibit-two">

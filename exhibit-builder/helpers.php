@@ -7,6 +7,9 @@ const TAG_UPCOMING = 'upcoming';
 
 function linked_exhibit_cover($exhibit, $size = 'thumbnail')
 {
+    if (! $exhibit) {
+        return '';
+    }
     $image = record_image($exhibit, $size, ['alt' => '']);
     return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
 }

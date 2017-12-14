@@ -58,7 +58,7 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
                                 <div class="element-text">
                                     <?php foreach ($exhibits as $exhibit): ?>
                                         <p>
-                                            <a href="/exhibits/show/<?= $exhibit['slug']; ?>">
+                                            <a href="<?= WEB_ROOT ?>/exhibits/show/<?= $exhibit['slug']; ?>">
                                         <?= $exhibit['title']; ?></a>
                                         </p>
                                     <?php endforeach; ?>

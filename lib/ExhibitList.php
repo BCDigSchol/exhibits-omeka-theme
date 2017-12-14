@@ -81,7 +81,10 @@ class ExhibitList
     INNER JOIN {$prefix}exhibit_block_attachments AS epba ON epba.block_id = epb.id
     WHERE epba.item_id = ?
 SQL;
-        $this->exhibits[$item->id] = $this->db->getTable('Exhibit')->fetchObjects($select, [$item->id]);
+        $exhibits = $this->db->getTable('Exhibit')->fetchObjects($select, [$item->id]);
+        if ($exhibits) {
+            $this->exhibits[$item->id] = $exhibits;
+        }
     }
 
     /**

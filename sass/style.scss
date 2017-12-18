@@ -1,6 +1,7 @@
 @grid-gutter-width :         300px;
 
 @import "bc-variables";
+@import "bc-mixins";
 @import "bootstrap";
 @import "bc-modular-header";
 @import "mixins";
@@ -8,6 +9,7 @@
 @import "bc-footer";
 @import "bc-exhibit-nav";
 @import "bc-item-page";
+@import "_bc-simple-pages";
 @import "bc-home";
 
 h1 {
@@ -45,7 +47,7 @@ $featured_exhibit_bottom_margin: 20px;
     background-color: $bc_light_grey;
     height: ($featured_exhibit_height + $featured_exhibit_bottom_margin) * 2;
     margin-bottom: $featured_exhibit_bottom_margin;
-    border-left: 10px solid $bc_exhibit-color;
+    @include styled-left-border($bc_exhibit-color);
 
     .exhibit {
       height: $featured_exhibit_height;
@@ -55,14 +57,14 @@ $featured_exhibit_bottom_margin: 20px;
 
 .full-exhibit-list {
   background-color: $bc_light_grey;
-  border-left: 10px solid $bc_exhibit-color;
+  @include styled-left-border($bc_exhibit-color);
 
   .exhibit {
   }
 }
 
 .exhibit {
-  background-color: #fff;
+  background-color: $bc_white;
   padding: 1em;
   margin-bottom: $featured_exhibit_bottom_margin;
   clear: both;
@@ -77,7 +79,7 @@ $featured_exhibit_bottom_margin: 20px;
 }
 
 .sub-header {
-  color: #fff;
+  color: $bc_white;
   text-align: center;
   text-transform: uppercase;
 }
@@ -94,7 +96,7 @@ $featured_exhibit_bottom_margin: 20px;
   height: 100%;
   content: "";
   display: block;
-  background-color: #f7f6f8;
+  background-color: $bc_control_gray_bg;
   z-index: 50;
 }
 
@@ -104,7 +106,7 @@ $featured_exhibit_bottom_margin: 20px;
   height: 0;
   width: 0;
   border: 16px inset transparent;
-  border-left: solid #E5E2D7;
+  border-left: solid $bc_control_gray_fg;
   position: absolute;
   right: -13px;
   top: 50%;
@@ -114,9 +116,9 @@ $featured_exhibit_bottom_margin: 20px;
 
 .summary {
   #primary {
-    background-color: #fff;
+    background-color: $bc_white;
     padding: 1em;
-    border-left: 10px solid $bc_exhibit-color;
+    @include styled-left-border($bc_exhibit-color);
   }
 
   .exhibit-description img {
@@ -133,7 +135,7 @@ $featured_exhibit_bottom_margin: 20px;
     padding: 4px 12px;
     margin-top: 1em;
 
-    border-left: 10px solid $bc_exhibit-color;
+    @include styled-left-border($bc_exhibit-color);
 
     h3 {
       font-size: 20px;
@@ -157,7 +159,7 @@ $featured_exhibit_bottom_margin: 20px;
     padding: 0.3rem 1.5rem 0.3rem 0.5rem;
     margin: 2px;
     background-color: $bc_caption_blue;
-    color: #fff;
+    color: $bc_white;
     display: inline-block;
     position: relative;
     font-size: 20px;
@@ -181,7 +183,7 @@ $featured_exhibit_bottom_margin: 20px;
 }
 
 #exhibit-blocks {
-  border-left: 10px solid $bc_exhibit-color;
+  @include styled-left-border($bc_exhibit-color);
   padding-left: 0;
 
   #exhibit-blocks-wrap {
@@ -190,7 +192,7 @@ $featured_exhibit_bottom_margin: 20px;
     overflow: hidden;
 
     .exhibit-block {
-      background-color: #ffffff;
+      background-color: $bc_white;
       padding: 16px;
       margin-bottom: 24px;
       overflow: hidden;
@@ -219,7 +221,7 @@ $featured_exhibit_bottom_margin: 20px;
 
 .metadata-box-wrap {
   background-color: $bc_light_grey;
-  border-left: 10px solid $bc_exhibit-color;
+  @include styled-left-border($bc_exhibit-color);
   padding-bottom: 16px;
   margin-bottom: 26px;
 
@@ -228,4 +230,8 @@ $featured_exhibit_bottom_margin: 20px;
     padding: 16px 32px 32px 32px;
     overflow: hidden;
   }
+}
+
+main {
+  @extend .container;
 }

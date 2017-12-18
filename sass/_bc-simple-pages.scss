@@ -1,0 +1,18 @@
+.simple-page.page {
+  .sub-header {
+    background-color: $bc_simple-page-color;
+  }
+
+  .special-page-content {
+    background-color: $bc_white;
+    @include styled-left-border($bc-simple-page-color);
+    padding: 1em 2em;
+    margin-top: 24px;
+
+  }
+  .item-main {
+    img {
+      max-width: 100%;
+    }
+  }
+}

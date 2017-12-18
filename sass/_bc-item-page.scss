@@ -4,7 +4,7 @@
   }
 
   .metadata-box-wrap {
-    border-left: 10px solid $bc_item-color;
+    @include styled-left-border($bc_item-color);
   }
   .item-main {
     img {

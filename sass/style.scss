@@ -12,6 +12,15 @@
 @import "_bc-simple-pages";
 @import "bc-home";
 
+.accessibility-text {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 h1 {
   font-size: 38px;
   margin: 11px 0;

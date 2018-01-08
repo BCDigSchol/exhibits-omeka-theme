@@ -26,15 +26,17 @@
     <?php
     queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700');
     queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+    queue_css_url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     queue_css_file('style');
     echo head_css();
     ?>
 
     <!-- Need more JavaScript files? Include them here -->
     <?php
-    queue_js_url('https://code.jquery.com/jquery-3.2.1.slim.min.js');
+    queue_js_url('https://code.jquery.com/jquery-3.2.1.min.js');
     queue_js_file('lib/bootstrap.min');
     queue_js_file('globals');
+    queue_js_url('https://library.bc.edu/theme/js/libhoursv2.js');
     echo head_js(false);
     ?>
     <!--[if lt IE 9]>

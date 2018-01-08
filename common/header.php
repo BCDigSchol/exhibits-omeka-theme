@@ -32,9 +32,10 @@
 
     <!-- Need more JavaScript files? Include them here -->
     <?php
+    queue_js_url('https://code.jquery.com/jquery-3.2.1.slim.min.js');
     queue_js_file('lib/bootstrap.min');
     queue_js_file('globals');
-    echo head_js();
+    echo head_js(false);
     ?>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>

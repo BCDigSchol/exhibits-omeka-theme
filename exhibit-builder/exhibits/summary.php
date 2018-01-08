@@ -33,10 +33,13 @@ $exhibit_uri = exhibit_builder_exhibit_uri($exhibit, $topPages[0]);
             <?= $description; ?>
         </div>
 
+        <?php if ($credits): ?>
         <div class="exhibit-credits">
             <h3><?= __('Credits'); ?></h3>
             <p><?= $credits; ?></p>
         </div>
+        <?php endif ?>
+
     </div>
 
     <?php include __DIR__ . '/summary-nav.php'; ?>

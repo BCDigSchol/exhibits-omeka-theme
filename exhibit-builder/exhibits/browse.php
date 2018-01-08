@@ -1,6 +1,6 @@
 <?php
 
-$title = __('Exhibits');
+$title = __('All exhibits');
 
 $result_count_display = __('(%s total)', $total_results);
 
@@ -21,9 +21,7 @@ $secondary_nav = nav(
     ]
 );
 
-
-$featured_exhibits = get_records('Exhibit', ['tags' => 'featured'], 2);
-$upcoming_exhibits = get_records('Exhibit', ['tags' => 'upcoming'], 2);
+$exhibits_loop = loop('exhibit');
 ?>
 <?= $head ?>
 
@@ -39,39 +37,10 @@ $upcoming_exhibits = get_records('Exhibit', ['tags' => 'upcoming'], 2);
 
             <?= pagination_links(); ?>
 
-            <div class="row no-gutters noteworthy-exhibits">
-                <div class="col-sm-12 col-md-6 featured-exhibits">
-                    <h2 class="section-title">Featured</h2>
-                    <div class="exhibit-list">
-                        <div class="section current-exhibits">
-                            <?php if ($featured_exhibits): ?>
-                                <?= \BC\Helpers\noteworthy_exhibit_box($featured_exhibits) ?>
-                            <?php else: ?>
-                                <div class="sub-section">There are no current exhibits at this time</div>
-                            <?php endif ?>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="col-sm-12 col-md-6 featured-exhibits">
-                    <h2 class="section-title">Upcoming</h2>
-                    <div class="exhibit-list">
-                        <div class="section current-exhibits">
-                            <?php if ($upcoming_exhibits): ?>
-                                <?= \BC\Helpers\noteworthy_exhibit_box($upcoming_exhibits) ?>
-                            <?php else: ?>
-                                <div class="sub-section">There are no upcoming exhibits planned at this time</div>
-                            <?php endif ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
             <h2>Boston College Libraries Exhibits</h2>
             <div class="full-exhibit-list">
-                <?php foreach (loop('exhibit') as $exhibit): ?>
-                    <div class="exhibit">
+                <?php foreach ($exhibits_loop as $exhibit): ?>
+                    <div class="<?= \BC\Helpers\exhibit_classes($exhibit); ?>">
                         <h3><?= link_to_exhibit(); ?></h3>
                         <div class="col-md-2">
                             <?= BC\Helpers\linked_exhibit_cover($exhibit); ?>

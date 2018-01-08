@@ -2,12 +2,13 @@
 
 namespace BC\Helpers;
 
+use Exhibit;
 const TAG_FEATURED = 'featured';
 const TAG_UPCOMING = 'upcoming';
 
 function linked_exhibit_cover($exhibit, $size = 'thumbnail')
 {
-    if (! $exhibit) {
+    if (!$exhibit) {
         return '';
     }
     $image = record_image($exhibit, $size, ['alt' => '']);
@@ -18,6 +19,15 @@ function exhibit_description()
 {
     $description = metadata('exhibit', 'description', ['no_escape' => true]);
     return $description ? "<div class=\"description\">$description</div>" : '';
+}
+
+function exhibit_classes(Exhibit $exhibit)
+{
+    $classes = ['exhibit'];
+    if ($exhibit->featured) {
+        $classes[] = 'featured';
+    }
+    return implode(' ', $classes);
 }
 
 function exhibit_tags()
@@ -51,7 +61,7 @@ function exhibit_brief_result($exhibit)
 EXHIBIT;
 }
 
-function truncated_description($exhibit, $length = 200, $brief=true)
+function truncated_description($exhibit, $length = 200, $brief = true)
 {
     $description = $brief ? $exhibit->brief_description : $exhibit->description;
     $description = strip_tags($description);

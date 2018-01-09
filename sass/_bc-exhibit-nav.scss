@@ -60,6 +60,7 @@
 
         .current {
           position: relative;
+          font-weight: 600;
 
           & :before {
             content: '>';

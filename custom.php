@@ -8,47 +8,65 @@ require_once __DIR__ . '/lib/NavMenu.php';
 /**
  * Return the markup for the exhibit page navigation.
  *
- * @param ExhibitPage|null $exhibitPage If null, uses the current exhibit page
- * @return string
  *
  * Modified function from 'helpers/ExhibitPageFunctions.php' file so the 'Jump to...'
  * menu would display the menu tree correctly
+ * @param ExhibitPage|null $exhibitPage If null, uses the current exhibit page
+ * @return string
+ * @throws Omeka_View
  */
-function custom_exhibit_builder_page_nav($exhibitPage = null)
+function custom_exhibit_builder_page_nav(ExhibitPage $exhibitPage = null)
 {
+    $exhibitPage = $exhibitPage ? $exhibitPage : get_current_record('exhibit_page', false);
     if (!$exhibitPage) {
-        if (!($exhibitPage = get_current_record('exhibit_page', false))) {
-            return;
-        }
+        return;
     }
 
     $exhibit = $exhibitPage->getExhibit();
-    $html = '<ul class="exhibit-page-nav navigation" id="secondary-nav">' . "\n";
     $pagesTrail = $exhibitPage->getAncestors();
     $pagesTrail[] = $exhibitPage;
-    $html .= '<li>';
-    $html .= '<a class="exhibit-title" href="'. html_escape(exhibit_builder_exhibit_uri($exhibit)) . '">';
-    $html .= html_escape($exhibit->title) .'</a></li>' . "\n";
     $page = $pagesTrail[0];
-    $linkText = $page->title;
     $pageExhibit = $page->getExhibit();
     $pageParent = $page->getParent();
     $pageSiblings = ($pageParent ? exhibit_builder_child_pages($pageParent) : $pageExhibit->getTopPages());
 
-    $html .= "<li>\n<ul>\n";
-    foreach ($pageSiblings as $pageSibling) {
-        $html .= '<li' . ($pageSibling->id == $page->id ? ' class="current"' : '') . '>';
-        $html .= '<a class="exhibit-page-title" href="' . html_escape(exhibit_builder_exhibit_uri($exhibit, $pageSibling)) . '">';
-        $html .= html_escape($pageSibling->title) . "</a></li>\n";
-        $children = exhibit_builder_child_pages($pageSibling);
-        if ($children) {
-            $html .= custom_exhibit_builder_child_page_nav($pageSibling);
-        }
-    }
-    $html .= "</ul>\n</li>\n";
+    $exhibit_uri = html_escape(exhibit_builder_exhibit_uri($exhibit));
+    $exhibit_title = html_escape($exhibit->title);
 
-    $html .= '</ul>' . "\n";
+    $child_links = '';
+    foreach ($pageSiblings as $pageSibling) {
+        $child_links .= custom_exhibit_builder_page_link($pageSibling, $page, $exhibit);
+    }
+
+    $html = <<<HTML
+<ul class="exhibit-page-nav navigation" id="secondary-nav">
+    <li>
+        <a class="exhibit-title" href="$exhibit_uri">$exhibit_title</a>
+        </li>
+        $child_links
+</ul>
+HTML;
+
     $html = apply_filters('exhibit_builder_page_nav', $html);
+    return $html;
+}
+
+function custom_exhibit_builder_page_link($pageSibling, $page, $exhibit)
+{
+    $li_class = $pageSibling->id === $page->id ? ' class="current"' : '';
+    $exhibit_uri = html_escape(exhibit_builder_exhibit_uri($exhibit, $pageSibling));
+    $exhibit_title = html_escape($pageSibling->title);
+
+    $html = <<<HTML
+<li $li_class>
+<a class="exhibit-page-title" href="$exhibit_uri">$exhibit_title</a>
+</li>
+HTML;
+
+    $children = exhibit_builder_child_pages($pageSibling);
+    if ($children) {
+        $html .= custom_exhibit_builder_child_page_nav($pageSibling);
+    }
     return $html;
 }
 
@@ -75,7 +93,9 @@ function custom_exhibit_builder_child_page_nav($exhibitPage = null)
     $html = '<ul class="exhibit-child-nav navigation">' . "\n";
     foreach ($children as $child) {
 
-        $html .= '<li' . ($child->id == $currentPage->id ? ' class="current"' : '') . '><a href="' . html_escape(exhibit_builder_exhibit_uri($exhibit, $child)) . '">' . html_escape($child->title) . '</a></li>';
+        $html .= '<li' . ($child->id == $currentPage->id ? ' class="current"' : '') . '><a href="' . html_escape(
+                exhibit_builder_exhibit_uri($exhibit, $child)
+            ) . '">' . html_escape($child->title) . '</a></li>';
         $children = exhibit_builder_child_pages($child);
         if ($children) {
             $html .= exhibit_builder_child_page_nav($child);

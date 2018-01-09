@@ -6314,7 +6314,8 @@ footer {
         .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul ul {
           padding-left: 1em; }
         .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul .current {
-          position: relative; }
+          position: relative;
+          font-weight: 600; }
           .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul .current :before {
             content: '>';
             position: absolute;

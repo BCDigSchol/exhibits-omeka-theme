@@ -8,12 +8,19 @@ echo head(
 
 $page_title = 'Exhibits';
 
+$previous_page_link = exhibit_builder_link_to_previous_page();
+$next_page_link = exhibit_builder_link_to_next_page();
+
 ?>
 <?php include __DIR__.'/../../common/page-title.php'; ?>
 <div class="container">
     <div class="row exhibit-nav-row">
         <h2 class="col-sm-8"><span class="exhibit-page"><?= metadata('exhibit_page', 'title'); ?></span></h2>
-        <div class="col-sm-3 col-sm-offset-1">
+        <div class="arrows col-sm-1 col-sm-offset-2">
+            <?= $previous_page_link ?>
+            <?= $next_page_link ?>
+        </div>
+        <div class="col-sm-1">
             <?php include __DIR__ . '/exhibit-nav.php'; ?>
         </div>
     </div>
@@ -23,14 +30,14 @@ $page_title = 'Exhibits';
                 <?php exhibit_builder_render_exhibit_page(); ?>
 
                 <div id="exhibit-page-navigation">
-                    <?php if ($prevLink = exhibit_builder_link_to_previous_page()): ?>
+                    <?php if ($previous_page_link): ?>
                         <div id="exhibit-nav-prev">
-                            <?= $prevLink; ?>
+                            <?= $previous_page_link; ?>
                         </div>
                     <?php endif; ?>
-                    <?php if ($nextLink = exhibit_builder_link_to_next_page()): ?>
+                    <?php if ($next_page_link): ?>
                         <div id="exhibit-nav-next">
-                            <?= $nextLink; ?>
+                            <?= $next_page_link; ?>
                         </div>
                     <?php endif; ?>
                 </div>

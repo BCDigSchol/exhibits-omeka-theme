@@ -1,10 +1,40 @@
-.exhibits.show {
+#exhibit-page-navigation {
   .next-page, .previous-page {
-    background-color:  $bc_exhibit-color;
+    background-color: $bc_exhibit-color;
   }
 
   .next-page:hover, .previous-page:hover {
-    background-color:  lighten($bc_exhibit-color, 10%);
+    background-color: lighten($bc_exhibit-color, 10%);
+  }
+}
+
+.arrows {
+  .next-page, .previous-page {
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    border: $bc_arrow_dimension solid transparent;
+    font-size: 0;
+    position: absolute;
+    top: 25px;
+  }
+
+  .next-page {
+    border-right: none;
+    border-left: $bc_arrow_dimension solid $bc_exhibit-color;
+    &:hover {
+      border-left-color: lighten($bc_exhibit-color, 10%);
+    }
+    right: 30px;
+  }
+
+  .previous-page {
+    border-left: none;
+    border-right: $bc_arrow_dimension solid $bc_exhibit-color;
+    &:hover {
+      border-right-color: lighten($bc_exhibit-color, 10%);
+    }
+    left: 0;
   }
 }
 

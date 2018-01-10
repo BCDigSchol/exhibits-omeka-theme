@@ -6273,10 +6273,31 @@ footer {
 @media print {
   footer {
     display: none !important; } }
-.exhibits.show .next-page, .exhibits.show .previous-page {
+#exhibit-page-navigation .next-page, #exhibit-page-navigation .previous-page {
   background-color: #234673; }
-.exhibits.show .next-page:hover, .exhibits.show .previous-page:hover {
+#exhibit-page-navigation .next-page:hover, #exhibit-page-navigation .previous-page:hover {
   background-color: #2f5e9a; }
+
+.arrows .next-page, .arrows .previous-page {
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: 18px solid transparent;
+  font-size: 0;
+  position: absolute;
+  top: 25px; }
+.arrows .next-page {
+  border-right: none;
+  border-left: 18px solid #234673;
+  right: 30px; }
+  .arrows .next-page:hover {
+    border-left-color: #2f5e9a; }
+.arrows .previous-page {
+  border-left: none;
+  border-right: 18px solid #234673;
+  left: 0; }
+  .arrows .previous-page:hover {
+    border-right-color: #2f5e9a; }
 
 .exhibit-nav-row {
   position: relative;
@@ -6515,7 +6536,7 @@ p {
       margin-bottom: 24px;
       overflow: hidden; }
 
-.next-page, .previous-page, .next-page:hover, .previous-page:hover {
+.next-page, .previous-page {
   color: #ffffff;
   text-decoration: none;
   padding: 8px;

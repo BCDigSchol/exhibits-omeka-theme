@@ -6289,13 +6289,13 @@ footer {
 .arrows .next-page {
   border-right: none;
   border-left: 18px solid #234673;
-  right: 30px; }
+  right: 135px; }
   .arrows .next-page:hover {
     border-left-color: #2f5e9a; }
 .arrows .previous-page {
   border-left: none;
   border-right: 18px solid #234673;
-  left: 0; }
+  left: 100px; }
   .arrows .previous-page:hover {
     border-right-color: #2f5e9a; }
 
@@ -6330,8 +6330,9 @@ footer {
       font-size: 15px; }
       .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul {
         list-style: none;
-        margin-left: 0;
-        padding-left: 0; }
+        margin-left: 12px;
+        padding-left: 0;
+        li: 1.5; }
         .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul ul {
           padding-left: 1em; }
         .exhibit-nav-row .exhibit-nav-container #exihibit-nav-box ul .current {

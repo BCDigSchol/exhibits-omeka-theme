@@ -16,11 +16,9 @@ $next_page_link = exhibit_builder_link_to_next_page();
 <div class="container">
     <div class="row exhibit-nav-row">
         <h2 class="col-sm-8"><span class="exhibit-page"><?= metadata('exhibit_page', 'title'); ?></span></h2>
-        <div class="arrows col-sm-1 col-sm-offset-2">
+        <div class="arrows col-sm-3 col-sm-offset-1">
             <?= $previous_page_link ?>
             <?= $next_page_link ?>
-        </div>
-        <div class="col-sm-1">
             <?php include __DIR__ . '/exhibit-nav.php'; ?>
         </div>
     </div>

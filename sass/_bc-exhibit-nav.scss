@@ -25,7 +25,7 @@
     &:hover {
       border-left-color: lighten($bc_exhibit-color, 10%);
     }
-    right: 30px;
+    right: 135px;
   }
 
   .previous-page {
@@ -34,7 +34,7 @@
     &:hover {
       border-right-color: lighten($bc_exhibit-color, 10%);
     }
-    left: 0;
+    left: 100px;
   }
 }
 
@@ -81,8 +81,9 @@
 
       ul {
         list-style: none;
-        margin-left: 0;
+        margin-left: 12px;
         padding-left: 0;
+        li: 1.5;
 
         ul {
           padding-left: 1em;

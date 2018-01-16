@@ -22,7 +22,9 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
 
 <main id="content" class="container">
     <div class="row">
-        <h2><?= $item_title; ?></h2>
+        <div class="col-sm-12">
+            <h2><?= $item_title; ?></h2>
+        </div>
     </div>
 
     <div class="row">
@@ -59,7 +61,7 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
                                     <?php foreach ($exhibits as $exhibit): ?>
                                         <p>
                                             <a href="<?= WEB_ROOT ?>/exhibits/show/<?= $exhibit['slug']; ?>">
-                                        <?= $exhibit['title']; ?></a>
+                                                <?= $exhibit['title']; ?></a>
                                         </p>
                                     <?php endforeach; ?>
                                 </div>
@@ -82,7 +84,6 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
                 </div>
             </div>
         </div>
-
     </div>
 </main>
 

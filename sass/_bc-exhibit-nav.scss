@@ -8,6 +8,21 @@
   }
 }
 
+.x-button {
+  float: right;
+  color: white;
+  margin-right: 1em;
+  cursor: pointer;
+}
+
+.jump-button {
+  float:left;
+}
+
+.jump-button.collapsed + .x-button {
+  display: none;
+}
+
 .arrows {
   .next-page, .previous-page {
     margin: 0;
@@ -72,7 +87,7 @@
 
     }
 
-    #exihibit-nav-box {
+    #exhibit-nav-box {
       background-color: $bc_white;
       width: 100%;
       padding: 1em;

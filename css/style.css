@@ -6379,6 +6379,15 @@ footer {
 .exhibit-gallery-item {
   margin-top: 1em; }
 
+.longtext {
+  column-count: 2;
+  column-gap: 3em;
+  -moz-column-count: 2;
+  -moz-column-gap: 3em; }
+
+.layout-gallery .gallery-showcase.left, .layout-gallery .gallery.left {
+  margin-right: 2em; }
+
 #home main {
   margin-top: 3em; }
 #home figure {

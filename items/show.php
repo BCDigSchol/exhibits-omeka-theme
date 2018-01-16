@@ -84,10 +84,6 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
         </div>
 
     </div>
-
-        <div class="nav-prev"><?php echo link_to_previous_item_show(null, ['class'=>'previous-page']); ?></div>
-        <div class="nav-next"><?php echo link_to_next_item_show(null, ['class'=>'next-page']); ?></div>
-
 </main>
 
 <?php echo foot(); ?>

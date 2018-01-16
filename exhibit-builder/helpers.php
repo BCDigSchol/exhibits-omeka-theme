@@ -27,7 +27,7 @@ function linked_exhibit_cover($exhibit, $size = 'thumbnail')
     if (!$exhibit) {
         return '';
     }
-    $image = record_image($exhibit, $size, ['alt' => '']);
+    $image = record_image($exhibit, $size, ['alt' => $exhibit->title]);
     return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
 }
 

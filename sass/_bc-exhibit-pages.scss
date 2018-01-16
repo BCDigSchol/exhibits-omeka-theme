@@ -1,5 +1,5 @@
 .exhibit-gallery-item {
-  margin-top: 1em;
+  margin-top: 2em;
 }
 
 .longtext {
@@ -11,4 +11,22 @@
 
 .layout-gallery .gallery-showcase.left, .layout-gallery .gallery.left {
   margin-right: 2em;
+}
+
+#exhibit-blocks {
+  @include styled-left-border($bc_exhibit-color);
+  padding-left: 0;
+
+  #exhibit-blocks-wrap {
+    background-color: $bc_light_grey;
+    padding-bottom: 16px;
+    overflow: hidden;
+
+    .exhibit-block {
+      background-color: $bc_white;
+      padding: 2em 16px 16px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+  }
 }

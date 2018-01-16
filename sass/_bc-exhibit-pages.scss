@@ -1,5 +1,5 @@
 .exhibit-gallery-item {
-  margin-top: 2em;
+  margin-top: 3em;
 }
 
 .longtext {
@@ -13,19 +13,25 @@
   margin-right: 2em;
 }
 
+.exhibit-item .exhibit-item-caption {
+  max-width: 200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #exhibit-blocks {
   @include styled-left-border($bc_exhibit-color);
   padding-left: 0;
 
   #exhibit-blocks-wrap {
     background-color: $bc_light_grey;
-    padding-bottom: 16px;
+    padding-bottom: 1em;
     overflow: hidden;
 
     .exhibit-block {
       background-color: $bc_white;
-      padding: 2em 16px 16px;
-      margin-bottom: 24px;
+      padding: 2em 1em 3em 1em;
+      margin-bottom: 1.5em;
       overflow: hidden;
     }
   }

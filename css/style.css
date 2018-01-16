@@ -6405,11 +6405,11 @@ footer {
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4); }
   #home figcaption .exhibit-title {
     font-family: "Open Sans Condensed", sans-serif; }
-#home .main-exhibit figcaption {
+#home .exhibit-1 figcaption {
   border-left-color: orange; }
-  #home .main-exhibit figcaption .exhibit-title {
+  #home .exhibit-1 figcaption .exhibit-title {
     font-size: 42px; }
-#home .exhibit-two figcaption .exhibit-title, #home .exhibit-three figcaption .exhibit-title {
+#home .exhibit-2 figcaption .exhibit-title, #home .exhibit-3 figcaption .exhibit-title {
   font-size: 24px; }
 #home .exhibit-two figcaption {
   border-left-color: purple; }

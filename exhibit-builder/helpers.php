@@ -6,6 +6,22 @@ use Exhibit;
 const TAG_FEATURED = 'featured';
 const TAG_UPCOMING = 'upcoming';
 
+function home_page_exhibit_figure($exhibit, $large = true, $position = 1)
+{
+    $col_width = $large ? 'col-sm-12' : 'col-sm-6';
+    $img = record_image($exhibit, 'original', ['alt' => '']);
+    $text = <<<HTML
+<figure class="$col_width exhibit-$position">
+    $img
+    <figcaption>
+        <div class="exhibit-title">{$exhibit->title}</div>
+        <div class="exhibit-subtitle">{$exhibit->title}</div>
+    </figcaption>
+</figure>
+HTML;
+    return exhibit_builder_link_to_exhibit($exhibit, $text);
+}
+
 function linked_exhibit_cover($exhibit, $size = 'thumbnail')
 {
     if (!$exhibit) {

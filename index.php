@@ -11,33 +11,15 @@ $exhibits = $exhibit_list->topExhibits();
     <div class="row">
 
         <?php if (isset($exhibits[0])): ?>
-        <figure class="col-sm-12 main-exhibit">
-            <?= \BC\Helpers\linked_exhibit_cover($exhibits[0], 'original') ?>
-            <figcaption>
-                <div class="exhibit-title"><?= $exhibits[0]->title; ?></div>
-                <div class="exhibit-subtitle"><?= $exhibits[0]->subtitle; ?></div>
-            </figcaption>
-        </figure>
+            <?= \BC\Helpers\home_page_exhibit_figure($exhibits[0]); ?>
         <?php endif; ?>
 
         <?php if (isset($exhibits[1])): ?>
-            <figure class="col-sm-6 secondary-exhibit exhibit-two">
-                <?= \BC\Helpers\linked_exhibit_cover($exhibits[1], 'original') ?>
-                <figcaption>
-                    <div class="exhibit-title"><?= $exhibits[1]->title; ?></div>
-                    <div class="exhibit-subtitle"><?= $exhibits[1]->subtitle; ?></div>
-                </figcaption>
-            </figure>
+            <?= \BC\Helpers\home_page_exhibit_figure($exhibits[1], false, 2); ?>
         <?php endif; ?>
 
         <?php if (isset($exhibits[2])): ?>
-            <figure class="col-sm-6 secondary-exhibit exhibit-three">
-                <?= \BC\Helpers\linked_exhibit_cover($exhibits[2], 'original') ?>
-                <figcaption>
-                    <div class="exhibit-title"><?= $exhibits[2]->title; ?></div>
-                    <div class="exhibit-subtitle"><?= $exhibits[2]->subtitle; ?></div>
-                </figcaption>
-            </figure>
+            <?= \BC\Helpers\home_page_exhibit_figure($exhibits[2], false, 3); ?>
         <?php endif; ?>
     </div>
 </main>

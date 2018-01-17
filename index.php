@@ -31,8 +31,8 @@ $exhibits = $exhibit_list->topExhibits();
             <?= \BC\Helpers\home_page_exhibit_figure($exhibits[2], false, 2); ?>
         <?php endif; ?>
 
-        <?php if (isset($exhibits[2])): ?>
-            <?= \BC\Helpers\home_page_exhibit_figure($exhibits[2], false, 3); ?>
+        <?php if (isset($exhibits[3])): ?>
+            <?= \BC\Helpers\home_page_exhibit_figure($exhibits[3], false, 3); ?>
         <?php endif; ?>
     </div>
 </main>

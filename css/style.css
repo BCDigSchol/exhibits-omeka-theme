@@ -1526,9 +1526,9 @@ pre {
   @media (min-width: 992px) {
     .container, main {
       width: 970px; } }
-  @media (min-width: 1200px) {
+  @media (min-width: 1280px) {
     .container, main {
-      width: 1170px; } }
+      width: 1270px; } }
 
 .container-fluid {
   margin-right: auto;
@@ -2024,7 +2024,7 @@ pre {
 
   .col-md-offset-12 {
     margin-left: 100%; } }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .col-lg-1, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-10, .col-lg-11, .col-lg-12 {
     float: left; }
 
@@ -5701,7 +5701,7 @@ button.close {
   .visible-sm-inline-block {
     display: inline-block !important; } }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
   .visible-md {
     display: block !important; }
 
@@ -5714,19 +5714,19 @@ button.close {
   th.visible-md,
   td.visible-md {
     display: table-cell !important; } }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
   .visible-md-block {
     display: block !important; } }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
   .visible-md-inline {
     display: inline !important; } }
 
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
   .visible-md-inline-block {
     display: inline-block !important; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .visible-lg {
     display: block !important; }
 
@@ -5739,15 +5739,15 @@ button.close {
   th.visible-lg,
   td.visible-lg {
     display: table-cell !important; } }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .visible-lg-block {
     display: block !important; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .visible-lg-inline {
     display: inline !important; } }
 
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .visible-lg-inline-block {
     display: inline-block !important; } }
 
@@ -5757,10 +5757,10 @@ button.close {
 @media (min-width: 768px) and (max-width: 991px) {
   .hidden-sm {
     display: none !important; } }
-@media (min-width: 992px) and (max-width: 1199px) {
+@media (min-width: 992px) and (max-width: 1279px) {
   .hidden-md {
     display: none !important; } }
-@media (min-width: 1200px) {
+@media (min-width: 1280px) {
   .hidden-lg {
     display: none !important; } }
 .visible-print {
@@ -6393,7 +6393,8 @@ footer {
 .exhibit-item .exhibit-item-caption {
   max-width: 200px;
   margin-left: auto;
-  margin-right: auto; }
+  margin-right: auto;
+  font-size: 0.9em; }
 
 #exhibit-blocks {
   border-left: 10px solid #234673;
@@ -6409,7 +6410,31 @@ footer {
       overflow: hidden; }
 
 #home main {
-  margin-top: 3em; }
+  margin-top: 0;
+  padding-top: 1em; }
+  #home main #home-title {
+    padding: 8px 16px;
+    font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+    font-size: 98px; }
+    #home main #home-title .bclib-name {
+      display: block;
+      text-transform: uppercase;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 16px; }
+  #home main .site-description {
+    padding: 8px 16px;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 24px;
+    margin-top: 1em; }
+  #home main .top-exhibit-block {
+    padding: 0; }
+  #home main .about-block {
+    background-color: #ffffff;
+    height: 524px; }
+  #home main a.front-page-exhibit-link, #home main a.front-page-exhibit-link:visited {
+    color: #000; }
+  #home main a.front-page-exhibit-link:hover {
+    color: #0d5e93; }
 #home figure {
   padding: 0; }
   #home figure img {
@@ -6419,16 +6444,15 @@ footer {
   position: absolute;
   z-index: 10;
   top: 0;
-  background-color: #ffffff;
+  background-color: #edefef;
+  border-left-color: #234673;
   border-left-width: 10px;
   border-left-style: solid;
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4); }
   #home figcaption .exhibit-title {
     font-family: "Open Sans Condensed", sans-serif; }
-#home .exhibit-1 figcaption {
-  border-left-color: orange; }
-  #home .exhibit-1 figcaption .exhibit-title {
-    font-size: 42px; }
+#home .exhibit-1 figcaption .exhibit-title {
+  font-size: 42px; }
 #home .exhibit-2 figcaption .exhibit-title, #home .exhibit-3 figcaption .exhibit-title {
   font-size: 24px; }
 #home .exhibit-two figcaption {

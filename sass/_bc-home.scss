@@ -1,6 +1,44 @@
 #home {
   main {
-    margin-top: 3em;
+    margin-top: 0;
+    padding-top: 1em;
+
+    #home-title {
+      padding: 8px 16px;
+      font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+      font-size: 98px;
+
+      .bclib-name {
+        display: block;
+        text-transform: uppercase;
+        font-family: "Playfair Display", Georgia, serif;
+        font-size: 16px;
+      }
+    }
+
+    .site-description {
+      padding: 8px 16px;
+      font-family: "Playfair Display", Georgia, serif;
+      font-size: 24px;
+      margin-top: 1em;
+    }
+
+    .top-exhibit-block {
+      padding: 0;
+    }
+
+    .about-block {
+      background-color: $bc_white;
+      height: 524px;
+    }
+
+    a.front-page-exhibit-link, a.front-page-exhibit-link:visited {
+      color: #000;
+    }
+
+    a.front-page-exhibit-link:hover {
+      color: $bc_caption_blue_bright;
+    }
   }
 
   figure {
@@ -16,7 +54,8 @@
     position: absolute;
     z-index: 10;
     top: 0;
-    background-color: $bc_white;
+    background-color: $bc_light_grey;
+    border-left-color: $bc_exhibit-color;
     border-left-width: 10px;
     border-left-style: solid;
     box-shadow: $bc_box-shadow;
@@ -29,7 +68,6 @@
 
   .exhibit-1 {
     figcaption {
-      border-left-color: orange;
       .exhibit-title {
         font-size: 42px;
       }

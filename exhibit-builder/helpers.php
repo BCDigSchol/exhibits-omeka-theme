@@ -8,7 +8,7 @@ const TAG_UPCOMING = 'upcoming';
 
 function home_page_exhibit_figure($exhibit, $large = true, $position = 1)
 {
-    $col_width = $large ? 'col-sm-12' : 'col-sm-6';
+    $col_width = $large ? 'col-md-12' : 'col-md-4';
     $img = record_image($exhibit, 'original', ['alt' => '']);
     $text = <<<HTML
 <figure class="$col_width exhibit-$position">
@@ -19,7 +19,7 @@ function home_page_exhibit_figure($exhibit, $large = true, $position = 1)
     </figcaption>
 </figure>
 HTML;
-    return exhibit_builder_link_to_exhibit($exhibit, $text);
+    return exhibit_builder_link_to_exhibit($exhibit, $text, ['class' => 'front-page-exhibit-link']);
 }
 
 function linked_exhibit_cover($exhibit, $size = 'thumbnail')

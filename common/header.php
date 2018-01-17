@@ -25,7 +25,7 @@
     <!-- Need to add custom and third-party CSS files? Include them here -->
     <?php
     queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700');
-    queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:700');
+    queue_css_url('https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700');
     queue_css_url('https://fonts.googleapis.com/css?family=Playfair+Display:400,400i');
     queue_css_url('//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
     queue_css_file('style');

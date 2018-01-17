@@ -91,6 +91,10 @@ $featured_exhibit_bottom_margin: 20px;
   color: $bc_white;
   text-align: center;
   text-transform: uppercase;
+  h2 {
+    font-size: 24px;
+    margin: 12px 0 6px 0;
+  }
 }
 
 .exhibits .sub-header {
@@ -225,4 +229,13 @@ $featured_exhibit_bottom_margin: 20px;
 
 main {
   @extend .container;
+}
+
+.exhibit-title, .item-title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold;
+}
+
+.exhibit-page-title {
+  font-family: "Open Sans Condensed", sans-serif;
 }

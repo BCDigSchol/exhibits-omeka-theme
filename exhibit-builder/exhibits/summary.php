@@ -22,7 +22,7 @@ $exhibit_uri = exhibit_builder_exhibit_uri($exhibit, $topPages[0]);
 <?php include __DIR__ . '/../../common/page-title.php'; ?>
 
 <div class="container summary">
-    <h2><?= $exhibit_title; ?></h2>
+    <h2 class="exhibit-title"><?= $exhibit_title; ?></h2>
 
     <?= exhibit_builder_page_nav(); ?>
 

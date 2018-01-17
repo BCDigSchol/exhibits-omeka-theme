@@ -6416,6 +6416,7 @@ footer {
   #home main #home-title {
     padding: 8px 16px;
     font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+    font-weight: bold;
     font-size: 98px; }
     #home main #home-title .bclib-name {
       display: block;
@@ -6450,8 +6451,6 @@ footer {
   border-left-width: 10px;
   border-left-style: solid;
   box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4); }
-  #home figcaption .exhibit-title {
-    font-family: "Open Sans Condensed", sans-serif; }
 #home .exhibit-1 figcaption .exhibit-title {
   font-size: 42px; }
 #home .exhibit-2 figcaption .exhibit-title, #home .exhibit-3 figcaption .exhibit-title {
@@ -6512,6 +6511,9 @@ p {
   color: #ffffff;
   text-align: center;
   text-transform: uppercase; }
+  .sub-header h2 {
+    font-size: 24px;
+    margin: 12px 0 6px 0; }
 
 .exhibits .sub-header {
   background-color: #234673; }
@@ -6617,5 +6619,12 @@ p {
     background-color: #ffffff;
     padding: 16px 32px 32px 32px;
     overflow: hidden; }
+
+.exhibit-title, .item-title {
+  font-family: "Open Sans Condensed", sans-serif;
+  font-weight: bold; }
+
+.exhibit-page-title {
+  font-family: "Open Sans Condensed", sans-serif; }
 
 /*# sourceMappingURL=style.css.map */

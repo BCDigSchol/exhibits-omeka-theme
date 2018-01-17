@@ -23,7 +23,7 @@ $exhibits = $has_exhibits ? $exhibit_list->exhibits($item) : [];
 <main id="content" class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h2><?= $item_title; ?></h2>
+            <h2 class="item-title"><?= $item_title; ?></h2>
         </div>
     </div>
 

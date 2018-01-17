@@ -7,6 +7,7 @@
     #home-title {
       padding: 8px 16px;
       font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+      font-weight: bold;
       font-size: 98px;
 
       .bclib-name {
@@ -60,11 +61,6 @@
     border-left-width: 10px;
     border-left-style: solid;
     box-shadow: $bc_box-shadow;
-
-    .exhibit-title {
-      font-family: "Open Sans Condensed", sans-serif;
-    }
-
   }
 
   .exhibit-1 {

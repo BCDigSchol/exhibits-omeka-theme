@@ -41,7 +41,7 @@ $exhibits_loop = loop('exhibit');
             <div class="full-exhibit-list">
                 <?php foreach ($exhibits_loop as $exhibit): ?>
                     <div class="<?= \BC\Helpers\exhibit_classes($exhibit); ?>">
-                        <h3><?= link_to_exhibit(); ?></h3>
+                        <h3 class="exhibit-title"><?= link_to_exhibit(); ?></h3>
                         <div class="col-md-2">
                             <?= BC\Helpers\linked_exhibit_cover($exhibit); ?>
                         </div>

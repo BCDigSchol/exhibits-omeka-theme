@@ -9,7 +9,16 @@ header {
     border: 0;
 
     h1 {
-      font-size: 24px;
+      font-size: 36px;
+      font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+      margin: 0;
+      font-weight: bold;
+      padding-top: 12px;
+
+      a, a:active, a:hover {
+        color: black;
+        text-decoration: none;
+      }
     }
 
     ul.navbar-right {

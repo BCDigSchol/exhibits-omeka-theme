@@ -5971,7 +5971,14 @@ header {
     margin-bottom: 8px;
     border: 0; }
     header .navbar h1 {
-      font-size: 24px; }
+      font-size: 36px;
+      font-family: "Open Sans Condensed", "Open Sans", sans-serif;
+      margin: 0;
+      font-weight: bold;
+      padding-top: 12px; }
+      header .navbar h1 a, header .navbar h1 a:active, header .navbar h1 a:hover {
+        color: black;
+        text-decoration: none; }
     header .navbar ul.navbar-right {
       margin-top: 21px; }
       header .navbar ul.navbar-right li {

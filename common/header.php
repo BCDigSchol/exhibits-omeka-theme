@@ -62,7 +62,9 @@
                             <span class="icon-bar"></span>
                             <span class="icon-bar"></span>
                         </button>
-                        <h1><?php echo link_to_home_page(theme_logo()); ?></h1>
+                        <?php if (@$bodyid !== 'home'): ?>
+                        <h1><?= link_to_home_page(theme_logo()); ?></h1>
+                        <?php endif; ?>
                     </div>
 
                     <!-- Collect the nav links, forms, and other content for toggling -->

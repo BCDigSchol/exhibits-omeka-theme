@@ -6457,7 +6457,10 @@ footer {
   border-left-color: #234673;
   border-left-width: 10px;
   border-left-style: solid;
-  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4); }
+  box-shadow: 6px 6px 10px 0 rgba(0, 0, 0, 0.4);
+  max-width: 80%; }
+#home .three-exhibit-row figcaption .exhibit-subtitle {
+  font-size: .9em; }
 #home .exhibit-1 figcaption .exhibit-title {
   font-size: 42px; }
 #home .exhibit-2 figcaption .exhibit-title, #home .exhibit-3 figcaption .exhibit-title {

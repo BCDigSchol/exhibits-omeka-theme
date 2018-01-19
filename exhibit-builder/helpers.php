@@ -15,7 +15,7 @@ function home_page_exhibit_figure($exhibit, $large = true, $position = 1)
     $img
     <figcaption>
         <div class="exhibit-title">{$exhibit->title}</div>
-        <div class="exhibit-subtitle">{$exhibit->title}</div>
+        <div class="exhibit-subtitle">{$exhibit->subtitle}</div>
     </figcaption>
 </figure>
 HTML;

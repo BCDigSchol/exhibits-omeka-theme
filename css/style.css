@@ -6381,7 +6381,7 @@ footer {
   background-color: #ffffff;
   border-left: 10px solid #5d694a;
   padding: 1em 2em;
-  margin-top: 24px; }
+  margin-top: 16px; }
 .simple-page.page .item-main img {
   max-width: 100%; }
 
@@ -6417,8 +6417,8 @@ footer {
       overflow: hidden; }
 
 #home main {
-  margin-top: 0;
-  padding-top: 1em;
+  margin-top: 16px;
+  padding-top: 0;
   background-color: #ffffff; }
   #home main #home-title {
     padding: 8px 16px;
@@ -6494,6 +6494,8 @@ p {
 
 .exhibits.browse .secondary-nav {
   display: none; }
+.exhibits.browse main {
+  margin-top: 16px; }
 
 .featured-exhibits .exhibit-list {
   background-color: #edefef;

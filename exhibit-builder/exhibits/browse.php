@@ -37,7 +37,6 @@ $exhibits_loop = loop('exhibit');
 
             <?= pagination_links(); ?>
 
-            <h2>Boston College Libraries Exhibits</h2>
             <div class="full-exhibit-list">
                 <?php foreach ($exhibits_loop as $exhibit): ?>
                     <div class="<?= \BC\Helpers\exhibit_classes($exhibit); ?>">

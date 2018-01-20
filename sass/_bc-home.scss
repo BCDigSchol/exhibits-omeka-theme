@@ -1,7 +1,7 @@
 #home {
   main {
-    margin-top: 0;
-    padding-top: 1em;
+    margin-top: $bc_main_top_margin;
+    padding-top: 0;
     background-color: $bc_white;
 
     #home-title {

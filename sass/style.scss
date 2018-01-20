@@ -48,6 +48,10 @@ $featured_exhibit_bottom_margin: 20px;
   .secondary-nav {
     display: none;
   }
+
+  main {
+    margin-top: $bc_main_top_margin;
+  }
 }
 
 .featured-exhibits {

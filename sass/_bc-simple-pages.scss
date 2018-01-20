@@ -7,7 +7,7 @@
     background-color: $bc_white;
     @include styled-left-border($bc-simple-page-color);
     padding: 1em 2em;
-    margin-top: 24px;
+    margin-top: $bc_main_top_margin;
 
   }
   .item-main {

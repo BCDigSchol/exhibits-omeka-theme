@@ -28,7 +28,7 @@ $exhibit_uri = exhibit_builder_exhibit_uri($exhibit, $topPages[0]);
 
     <div id="primary" class="col-md-8">
         <div class="exhibit-description">
-            <?= \BC\Helpers\linked_exhibit_cover($exhibit); ?>
+            <?= \BC\Helpers\linked_exhibit_cover($exhibit, 'thumbnail', false); ?>
 
             <?= $description; ?>
         </div>

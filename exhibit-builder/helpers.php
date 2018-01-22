@@ -22,13 +22,17 @@ HTML;
     return exhibit_builder_link_to_exhibit($exhibit, $text, ['class' => 'front-page-exhibit-link']);
 }
 
-function linked_exhibit_cover($exhibit, $size = 'thumbnail')
+function linked_exhibit_cover($exhibit, $size = 'thumbnail', $link = true)
 {
     if (!$exhibit) {
         return '';
     }
     $image = record_image($exhibit, $size, ['alt' => $exhibit->title]);
-    return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
+    if ($link) {
+        return $image ? exhibit_builder_link_to_exhibit($exhibit, $image, ['class' => 'image']) : '';
+    } else {
+        return $image ? $image : '';
+    }
 }
 
 function exhibit_description()
